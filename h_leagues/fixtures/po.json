@@ -1,0 +1,497 @@
+[
+  {
+    "model": "h_leagues.poseries",
+    "pk": 1,
+    "fields": {
+      "h_msg": "1st Seed",
+      "l_msg": "16th Seed",
+      "series": "First Round",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 2,
+    "fields": {
+      "h_msg": "2nd Seed",
+      "l_msg": "15th Seed",
+      "series": "First Round",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 3,
+    "fields": {
+      "h_msg": "3rd Seed",
+      "l_msg": "14th Seed",
+      "series": "First Round",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 4,
+    "fields": {
+      "h_msg": "4th Seed",
+      "l_msg": "13th Seed",
+      "series": "First Round",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 5,
+    "fields": {
+      "h_msg": "5th Seed",
+      "l_msg": "12th Seed",
+      "series": "First Round",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 6,
+    "fields": {
+      "h_msg": "6th Seed",
+      "l_msg": "11th Seed",
+      "series": "First Round",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 7,
+    "fields": {
+      "h_msg": "7th Seed",
+      "l_msg": "10th Seed",
+      "series": "First Round",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 8,
+    "fields": {
+      "h_msg": "8th Seed",
+      "l_msg": "9th Seed",
+      "series": "First Round",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 9,
+    "fields": {
+      "h_msg": "1st Higher Seed",
+      "l_msg": "8th Higher Seed",
+      "series": "Second Round",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 10,
+    "fields": {
+      "h_msg": "2nd Higher Seed",
+      "l_msg": "7th Higher Seed",
+      "series": "Second Round",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 11,
+    "fields": {
+      "h_msg": "3rd Higher Seed",
+      "l_msg": "6th Higher Seed",
+      "series": "Second Round",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 12,
+    "fields": {
+      "h_msg": "4th Higher Seed",
+      "l_msg": "5th Higher Seed",
+      "series": "Second Round",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 13,
+    "fields": {
+      "h_msg": "TBD",
+      "l_msg": "TBD",
+      "series": "Semifinal",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 14,
+    "fields": {
+      "h_msg": "TBD",
+      "l_msg": "TBD",
+      "series": "Semifinal",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 15,
+    "fields": {
+      "h_msg": "TBD",
+      "l_msg": "TBD",
+      "series": "Final",
+      "conference": "",
+      "league": "QMJHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 16,
+    "fields": {
+      "h_msg": "1st Central",
+      "l_msg": "Wild Card",
+      "series": "Division SF",
+      "conference": "Eastern",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 17,
+    "fields": {
+      "h_msg": "2nd Central",
+      "l_msg": "3rd Central",
+      "series": "Division SF",
+      "conference": "Eastern",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 18,
+    "fields": {
+      "h_msg": "1st East",
+      "l_msg": "Wild Card",
+      "series": "Division SF",
+      "conference": "Eastern",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 19,
+    "fields": {
+      "h_msg": "2nd East",
+      "l_msg": "3rd East",
+      "series": "Division SF",
+      "conference": "Eastern",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 20,
+    "fields": {
+      "h_msg": "1st B.C.",
+      "l_msg": "Wild Card",
+      "series": "Division SF",
+      "conference": "Western",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 21,
+    "fields": {
+      "h_msg": "2nd B.C.",
+      "l_msg": "3rd B.C.",
+      "series": "Division SF",
+      "conference": "Western",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 22,
+    "fields": {
+      "h_msg": "1st U.S.",
+      "l_msg": "Wild Card",
+      "series": "Division SF",
+      "conference": "Western",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 23,
+    "fields": {
+      "h_msg": "2nd U.S.",
+      "l_msg": "3rd U.S",
+      "series": "Division SF",
+      "conference": "Western",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 24,
+    "fields": {
+      "h_msg": "Best Central",
+      "l_msg": "Worst Central",
+      "series": "Division Final",
+      "conference": "Eastern",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 25,
+    "fields": {
+      "h_msg": "Best East",
+      "l_msg": "Worst East",
+      "series": "Division Final",
+      "conference": "Eastern",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 26,
+    "fields": {
+      "h_msg": "Best B.C.",
+      "l_msg": "Worst B.C.",
+      "series": "Division Final",
+      "conference": "Western",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 27,
+    "fields": {
+      "h_msg": "Best U.S.",
+      "l_msg": "Worst U.S.",
+      "series": "Division Final",
+      "conference": "Western",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 28,
+    "fields": {
+      "h_msg": "East -- Central",
+      "l_msg": "East -- Central",
+      "series": "Conference Final",
+      "conference": "Eastern",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 29,
+    "fields": {
+      "h_msg": "B.C. -- U.S.",
+      "l_msg": "B.C. -- U.S.",
+      "series": "Conference Final",
+      "conference": "Western",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 30,
+    "fields": {
+      "h_msg": "Eastern Champion",
+      "l_msg": "Western Champion",
+      "series": "Final",
+      "conference": "",
+      "league": "WHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 31,
+    "fields": {
+      "h_msg": "1st Seed",
+      "l_msg": "8th Seed",
+      "series": "Eastern R1",
+      "conference": "Eastern",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 32,
+    "fields": {
+      "h_msg": "2nd Seed",
+      "l_msg": "7th Seed",
+      "series": "Eastern R1",
+      "conference": "Eastern",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 33,
+    "fields": {
+      "h_msg": "3rd Seed",
+      "l_msg": "6th Seed",
+      "series": "Eastern R1",
+      "conference": "Eastern",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 34,
+    "fields": {
+      "h_msg": "4th Seed",
+      "l_msg": "5th Seed",
+      "series": "Eastern R1",
+      "conference": "Eastern",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 35,
+    "fields": {
+      "h_msg": "1st Seed",
+      "l_msg": "8th Seed",
+      "series": "Western R1",
+      "conference": "Western",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 36,
+    "fields": {
+      "h_msg": "2nd Seed",
+      "l_msg": "7th Seed",
+      "series": "Western R1",
+      "conference": "Western",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 37,
+    "fields": {
+      "h_msg": "3rd Seed",
+      "l_msg": "6th Seed",
+      "series": "Western R1",
+      "conference": "Western",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 38,
+    "fields": {
+      "h_msg": "4th Seed",
+      "l_msg": "5th Seed",
+      "series": "Western R1",
+      "conference": "Western",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 39,
+    "fields": {
+      "h_msg": "Best E",
+      "l_msg": "4th Best E",
+      "series": "Eastern R2",
+      "conference": "Eastern",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 40,
+    "fields": {
+      "h_msg": "2nd Best E",
+      "l_msg": "3rd Best E",
+      "series": "Eastern R2",
+      "conference": "Eastern",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 41,
+    "fields": {
+      "h_msg": "Best W",
+      "l_msg": "4th Best W",
+      "series": "Western R2",
+      "conference": "Western",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 42,
+    "fields": {
+      "h_msg": "2nd Best W",
+      "l_msg": "3rd Best W",
+      "series": "Western R2",
+      "conference": "Western",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 43,
+    "fields": {
+      "h_msg": "TBD",
+      "l_msg": "TBD",
+      "series": "Conference F",
+      "conference": "Eastern",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 44,
+    "fields": {
+      "h_msg": "TBD",
+      "l_msg": "TBD",
+      "series": "Conference F",
+      "conference": "Western",
+      "league": "OHL"
+    }
+  },
+  {
+    "model": "h_leagues.poseries",
+    "pk": 45,
+    "fields": {
+      "h_msg": "TBD",
+      "l_msg": "TBD",
+      "series": "Final",
+      "conference": "",
+      "league": "OHL"
+    }
+  }
+]

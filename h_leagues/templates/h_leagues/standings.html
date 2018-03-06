@@ -1,0 +1,745 @@
+{% extends 'h_leagues/base.html' %}
+
+{% block mainblock %}
+    {% if league == 'QMJHL' %}
+        <h2> Divisions</h2>
+
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> West Division </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in q_west %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <br>
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> West Division </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in q_east %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <br>
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> Maritimes Division </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in q_marit %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br> <br>
+
+        <h2> League </h2>
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> League </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in total %}
+                {% if forloop.counter == 16 %}
+                <tr style="border-bottom: 4px solid blue">
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+                {% else %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    {% elif league == 'OHL'  %}
+        <h2> Divisions </h2>
+
+        <h3> Eastern Conference</h3><hr>
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> Central Division </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in o_central %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> East Division </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in o_east %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+
+        <h3> Western Conference</h3><hr>
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> Midwest Division </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in o_midwest %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> West Division </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in o_west %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br> <br>
+
+        <h2> Conferences </h2>
+
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> Eastern Conference </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in EC %}
+                {% if forloop.counter == 8 %}
+                <tr style="border-bottom: 4px solid blue">
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+                {% else %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> Western Conference</th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in WC %}
+                {% if forloop.counter == 8 %}
+                <tr style="border-bottom: 4px solid blue">
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+                {% else %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h3> Eastern Conference</h3><hr>
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> Central Division </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in w_central %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> East Division </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in w_east %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> East Wild Card </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in e_wc %}
+                {% if forloop.counter == 2 %}
+                <tr style="border-bottom: 4px solid red">
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+                {% else %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+        <br> <br>
+
+        <h3> Western Conference</h3><hr>
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> B.C. Division </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in bc %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> U.S Division </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in us %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+
+        <table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> West Wild Card </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in w_wc %}
+                {% if forloop.counter == 2 %}
+                <tr style="border-bottom: 4px solid red">
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+                {% else %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    <th> {{ qw.city }} {{ qw.name }} </th>
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+        <br> <br>
+    {% endif %}
+
+{% endblock %}

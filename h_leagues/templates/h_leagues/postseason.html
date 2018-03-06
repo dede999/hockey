@@ -1,0 +1,628 @@
+{% extends 'h_leagues/base.html' %}
+
+{% block mainblock %}
+
+    {% if liga  == 'QMJHL'%}
+        <h2> First Round </h2> <hr>
+        <div class="row">
+        {% for game in r1 %}
+            <div class="col s3 z-depth-4">
+                <table>
+                    <thead>
+                        <th>
+                           <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% if game.high == '' %}
+                                <td> {{ game.h_msg }} </td>
+                            {% else %}
+                                <td> {{ game.high }} </td>
+                            {% endif %}
+                                <td style="text-align: right"> {{ game.h_wins }} </td>
+                        </tr>
+                        <tr>
+                            {% if game.low == '' %}
+                                <td> {{ game.l_msg }} </td>
+                            {% else %}
+                                <td> {{ game.low }} </td>
+                            {% endif %}
+                                <td style="text-align: right"> {{ game.l_wins }} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+        </div>
+        <h2> Second Round </h2> <hr>
+        <div class="row">
+        {% for game in r2 %}
+            <div class="col s3 z-depth-4">
+                <table>
+                    <thead>
+                        <th>
+                           <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% if game.high == '' %}
+                                <td> {{ game.h_msg }} </td>
+                            {% else %}
+                                <td> {{ game.high }} </td>
+                            {% endif %}
+                                <td style="text-align: right"> {{ game.h_wins }} </td>
+                        </tr>
+                        <tr>
+                            {% if game.low == '' %}
+                                <td> {{ game.l_msg }} </td>
+                            {% else %}
+                                <td> {{ game.low }} </td>
+                            {% endif %}
+                                <td style="text-align: right"> {{ game.l_wins }} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+        </div>
+        <h2> Semifinal </h2> <hr>
+        <div class="row">
+        {% for game in r3 %}
+            <div class="col s6 z-depth-4">
+                <table>
+                    <thead>
+                        <th>
+                           <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% if game.high == '' %}
+                                <td> {{ game.h_msg }} </td>
+                            {% else %}
+                                <td> {{ game.high }} </td>
+                            {% endif %}
+                                <td style="text-align: right"> {{ game.h_wins }} </td>
+                        </tr>
+                        <tr>
+                            {% if game.low == '' %}
+                                <td> {{ game.l_msg }} </td>
+                            {% else %}
+                                <td> {{ game.low }} </td>
+                            {% endif %}
+                                <td style="text-align: right"> {{ game.l_wins }} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+        </div>
+        <h2> Final </h2> <hr>
+        <div class="row">
+        {% for game in r4 %}
+            <div class="col s12 z-depth-4">
+                <table>
+                    <thead>
+                        <th>
+                           <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% if game.high == '' %}
+                                <td> {{ game.h_msg }} </td>
+                            {% else %}
+                                <td> {{ game.high }} </td>
+                            {% endif %}
+                                <td style="text-align: right"> {{ game.h_wins }} </td>
+                        </tr>
+                        <tr>
+                            {% if game.low == '' %}
+                                <td> {{ game.l_msg }} </td>
+                            {% else %}
+                                <td> {{ game.low }} </td>
+                            {% endif %}
+                                <td style="text-align: right"> {{ game.l_wins }} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+        </div>
+    {% elif liga == 'WHL' %}
+        <h4 style="text-align: center"> Round 1 </h4>
+        <div class="row">
+            <div class="col s6">
+                <h4> Western Conferece </h4> <hr>
+                <div class="row">
+                    {% for game in r1w %}
+                        <div class="col s6 z-depth-4">
+                            <table>
+                                <thead>
+                                    <th>
+                                       <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% if game.high == '' %}
+                                            <td> {{ game.h_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.high }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.h_wins }} </td>
+                                    </tr>
+                                    <tr>
+                                        {% if game.low == '' %}
+                                            <td> {{ game.l_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.low }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.l_wins }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col s6">
+                <h4> Eastern Conferece </h4> <hr>
+                <div class="row">
+                    {% for game in r1e %}
+                        <div class="col s6 z-depth-4">
+                            <table>
+                                <thead>
+                                    <th>
+                                       <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% if game.high == '' %}
+                                            <td> {{ game.h_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.high }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.h_wins }} </td>
+                                    </tr>
+                                    <tr>
+                                        {% if game.low == '' %}
+                                            <td> {{ game.l_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.low }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.l_wins }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <h4 style="text-align: center"> Round 2 </h4>
+        <div class="row">
+            <div class="col s6">
+                <h4> Western Conferece </h4> <hr>
+                <div class="row">
+                    {% for game in r2w %}
+                        <div class="col s6 z-depth-4">
+                            <table>
+                                <thead>
+                                    <th>
+                                       <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% if game.high == '' %}
+                                            <td> {{ game.h_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.high }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.h_wins }} </td>
+                                    </tr>
+                                    <tr>
+                                        {% if game.low == '' %}
+                                            <td> {{ game.l_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.low }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.l_wins }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col s6">
+                <h4> Eastern Conferece </h4> <hr>
+                <div class="row">
+                    {% for game in r2e %}
+                        <div class="col s6 z-depth-4">
+                            <table>
+                                <thead>
+                                    <th>
+                                       <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% if game.high == '' %}
+                                            <td> {{ game.h_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.high }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.h_wins }} </td>
+                                    </tr>
+                                    <tr>
+                                        {% if game.low == '' %}
+                                            <td> {{ game.l_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.low }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.l_wins }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <h4 style="text-align: center;"> Conference Finals </h4>
+        <div class="row">
+            <div class="col s6">
+                <h4> Western Conferece </h4> <hr>
+                <div class="row">
+                    {% for game in r3w %}
+                        <div class="col s12 z-depth-4">
+                            <table>
+                                <thead>
+                                    <th>
+                                       <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% if game.high == '' %}
+                                            <td> {{ game.h_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.high }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.h_wins }} </td>
+                                    </tr>
+                                    <tr>
+                                        {% if game.low == '' %}
+                                            <td> {{ game.l_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.low }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.l_wins }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col s6">
+                <h4> Eastern Conferece </h4> <hr>
+                <div class="row">
+                    {% for game in r3e %}
+                        <div class="col s12 z-depth-4">
+                            <table>
+                                <thead>
+                                    <th>
+                                       <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% if game.high == '' %}
+                                            <td> {{ game.h_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.high }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.h_wins }} </td>
+                                    </tr>
+                                    <tr>
+                                        {% if game.low == '' %}
+                                            <td> {{ game.l_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.low }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.l_wins }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <h4 style="text-align: center;"> Finals </h4>
+        <div class="row">
+            {% for game in r4 %}
+                <div class="col s12 z-depth-4">
+                    <table>
+                        <thead>
+                            <th>
+                               <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {% if game.high == '' %}
+                                    <td> {{ game.h_msg }} </td>
+                                {% else %}
+                                    <td> {{ game.high }} </td>
+                                {% endif %}
+                                    <td style="text-align: right"> {{ game.h_wins }} </td>
+                            </tr>
+                            <tr>
+                                {% if game.low == '' %}
+                                    <td> {{ game.l_msg }} </td>
+                                {% else %}
+                                    <td> {{ game.low }} </td>
+                                {% endif %}
+                                    <td style="text-align: right"> {{ game.l_wins }} </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h4 style="text-align: center"> Round 1 </h4>
+        <div class="row">
+            <div class="col s6">
+                <h4> Western Conferece </h4> <hr>
+                <div class="row">
+                    {% for game in r1w %}
+                        <div class="col s6 z-depth-4">
+                            <table>
+                                <thead>
+                                    <th>
+                                       <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% if game.high == '' %}
+                                            <td> {{ game.h_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.high }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.h_wins }} </td>
+                                    </tr>
+                                    <tr>
+                                        {% if game.low == '' %}
+                                            <td> {{ game.l_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.low }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.l_wins }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col s6">
+                <h4> Eastern Conferece </h4> <hr>
+                <div class="row">
+                    {% for game in r1e %}
+                        <div class="col s6 z-depth-4">
+                            <table>
+                                <thead>
+                                    <th>
+                                       <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% if game.high == '' %}
+                                            <td> {{ game.h_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.high }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.h_wins }} </td>
+                                    </tr>
+                                    <tr>
+                                        {% if game.low == '' %}
+                                            <td> {{ game.l_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.low }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.l_wins }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <h4 style="text-align: center"> Round 2 </h4>
+        <div class="row">
+            <div class="col s6">
+                <h4> Western Conferece </h4> <hr>
+                <div class="row">
+                    {% for game in r2w %}
+                        <div class="col s6 z-depth-4">
+                            <table>
+                                <thead>
+                                    <th>
+                                       <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% if game.high == '' %}
+                                            <td> {{ game.h_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.high }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.h_wins }} </td>
+                                    </tr>
+                                    <tr>
+                                        {% if game.low == '' %}
+                                            <td> {{ game.l_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.low }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.l_wins }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col s6">
+                <h4> Eastern Conferece </h4> <hr>
+                <div class="row">
+                    {% for game in r2e %}
+                        <div class="col s6 z-depth-4">
+                            <table>
+                                <thead>
+                                    <th>
+                                       <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% if game.high == '' %}
+                                            <td> {{ game.h_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.high }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.h_wins }} </td>
+                                    </tr>
+                                    <tr>
+                                        {% if game.low == '' %}
+                                            <td> {{ game.l_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.low }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.l_wins }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <h4 style="text-align: center;"> Conference Finals </h4>
+        <div class="row">
+            <div class="col s6">
+                <h4> Western Conferece </h4> <hr>
+                <div class="row">
+                    {% for game in r3w %}
+                        <div class="col s12 z-depth-4">
+                            <table>
+                                <thead>
+                                    <th>
+                                       <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% if game.high == '' %}
+                                            <td> {{ game.h_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.high }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.h_wins }} </td>
+                                    </tr>
+                                    <tr>
+                                        {% if game.low == '' %}
+                                            <td> {{ game.l_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.low }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.l_wins }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col s6">
+                <h4> Eastern Conferece </h4> <hr>
+                <div class="row">
+                    {% for game in r3e %}
+                        <div class="col s12 z-depth-4">
+                            <table>
+                                <thead>
+                                    <th>
+                                       <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {% if game.high == '' %}
+                                            <td> {{ game.h_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.high }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.h_wins }} </td>
+                                    </tr>
+                                    <tr>
+                                        {% if game.low == '' %}
+                                            <td> {{ game.l_msg }} </td>
+                                        {% else %}
+                                            <td> {{ game.low }} </td>
+                                        {% endif %}
+                                            <td style="text-align: right"> {{ game.l_wins }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <h4 style="text-align: center;"> Finals </h4>
+        <div class="row">
+            {% for game in r4 %}
+                <div class="col s12 z-depth-4">
+                    <table>
+                        <thead>
+                            <th>
+                               <td style="text-align-all: center" colspan="2"> {{ game.series }} </td>
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {% if game.high == '' %}
+                                    <td> {{ game.h_msg }} </td>
+                                {% else %}
+                                    <td> {{ game.high }} </td>
+                                {% endif %}
+                                    <td style="text-align: right"> {{ game.h_wins }} </td>
+                            </tr>
+                            <tr>
+                                {% if game.low == '' %}
+                                    <td> {{ game.l_msg }} </td>
+                                {% else %}
+                                    <td> {{ game.low }} </td>
+                                {% endif %}
+                                    <td style="text-align: right"> {{ game.l_wins }} </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endblock %}

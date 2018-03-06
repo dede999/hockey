@@ -1,0 +1,722 @@
+[
+  {
+    "model": "h_leagues.team",
+    "pk": 1,
+    "fields": {
+      "city": "Hamilton",
+      "name": "Bulldogs",
+      "abr": "HAM",
+      "league": "OHL",
+      "division": "East",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 2,
+    "fields": {
+      "city": "Kingston",
+      "name": "Frontenacs",
+      "abr": "KGN",
+      "league": "OHL",
+      "division": "East",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 3,
+    "fields": {
+      "city": "Oshawa",
+      "name": "Generals",
+      "abr": "OSH",
+      "league": "OHL",
+      "division": "East",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 4,
+    "fields": {
+      "city": "Ottawa",
+      "name": "67's",
+      "abr": "OTT",
+      "league": "OHL",
+      "division": "East",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 5,
+    "fields": {
+      "city": "Peterborough",
+      "name": "Petes",
+      "abr": "PBO",
+      "league": "OHL",
+      "division": "East",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 6,
+    "fields": {
+      "city": "Barrie",
+      "name": "Colts",
+      "abr": "BAR",
+      "league": "OHL",
+      "division": "Central",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 7,
+    "fields": {
+      "city": "Mississauga",
+      "name": "Steelheads",
+      "abr": "MISS",
+      "league": "OHL",
+      "division": "Central",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 8,
+    "fields": {
+      "city": "Niagara",
+      "name": "IceDogs",
+      "abr": "NIAG",
+      "league": "OHL",
+      "division": "Central",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 9,
+    "fields": {
+      "city": "North Bay",
+      "name": "Battalion",
+      "abr": "NB",
+      "league": "OHL",
+      "division": "Central",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 10,
+    "fields": {
+      "city": "Sudbury",
+      "name": "Wolves",
+      "abr": "SBY",
+      "league": "OHL",
+      "division": "Central",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 11,
+    "fields": {
+      "city": "Erie",
+      "name": "Otters",
+      "abr": "ER",
+      "league": "OHL",
+      "division": "Midwest",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 12,
+    "fields": {
+      "city": "Guelph",
+      "name": "Storm",
+      "abr": "GUE",
+      "league": "OHL",
+      "division": "Midwest",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 13,
+    "fields": {
+      "city": "Kitchener",
+      "name": "Rangers",
+      "abr": "KIT",
+      "league": "OHL",
+      "division": "Midwest",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 14,
+    "fields": {
+      "city": "London",
+      "name": "Knights",
+      "abr": "LON",
+      "league": "OHL",
+      "division": "Midwest",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 15,
+    "fields": {
+      "city": "Owen Sound",
+      "name": "Attack",
+      "abr": "OS",
+      "league": "OHL",
+      "division": "Midwest",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 16,
+    "fields": {
+      "city": "Flint",
+      "name": "Firebirds",
+      "abr": "FLNT",
+      "league": "OHL",
+      "division": "West",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 17,
+    "fields": {
+      "city": "Saginaw",
+      "name": "Spirit",
+      "abr": "SAG",
+      "league": "OHL",
+      "division": "West",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 18,
+    "fields": {
+      "city": "Sarnia",
+      "name": "Sting",
+      "abr": "SAR",
+      "league": "OHL",
+      "division": "West",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 19,
+    "fields": {
+      "city": "Sault Ste. Marie",
+      "name": "Greyhounds",
+      "abr": "SSM",
+      "league": "OHL",
+      "division": "West",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 20,
+    "fields": {
+      "city": "Windsor",
+      "name": "Spitfires",
+      "abr": "WSR",
+      "league": "OHL",
+      "division": "West",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 21,
+    "fields": {
+      "city": "Brandon",
+      "name": "Wheat Kings",
+      "abr": "BDN",
+      "league": "WHL",
+      "division": "East",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 22,
+    "fields": {
+      "city": "Moose Jaw",
+      "name": "Warriors",
+      "abr": "MJ",
+      "league": "WHL",
+      "division": "East",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 23,
+    "fields": {
+      "city": "Prince Albert",
+      "name": "Raiders",
+      "abr": "PA",
+      "league": "WHL",
+      "division": "East",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 24,
+    "fields": {
+      "city": "Regina",
+      "name": "Pats",
+      "abr": "REG",
+      "league": "WHL",
+      "division": "East",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 25,
+    "fields": {
+      "city": "Saskatoon",
+      "name": "Blades",
+      "abr": "SAS",
+      "league": "WHL",
+      "division": "East",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 26,
+    "fields": {
+      "city": "Swift Current",
+      "name": "Broncos",
+      "abr": "SC",
+      "league": "WHL",
+      "division": "East",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 27,
+    "fields": {
+      "city": "Calgary",
+      "name": "Hitmen",
+      "abr": "CGY",
+      "league": "WHL",
+      "division": "Central",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 28,
+    "fields": {
+      "city": "Edmonton",
+      "name": "Oil Kings",
+      "abr": "EDM",
+      "league": "WHL",
+      "division": "Central",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 29,
+    "fields": {
+      "city": "Kootenay",
+      "name": "ICE",
+      "abr": "KTN",
+      "league": "WHL",
+      "division": "Central",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 30,
+    "fields": {
+      "city": "Lethbridge",
+      "name": "Hurricanes",
+      "abr": "LET",
+      "league": "WHL",
+      "division": "Central",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 31,
+    "fields": {
+      "city": "Medicine Hat",
+      "name": "Tigers",
+      "abr": "MH",
+      "league": "WHL",
+      "division": "Central",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 32,
+    "fields": {
+      "city": "Red Deer",
+      "name": "Rebels",
+      "abr": "RD",
+      "league": "WHL",
+      "division": "Central",
+      "conference": "Eastern"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 33,
+    "fields": {
+      "city": "Kamloops",
+      "name": "Blazers",
+      "abr": "KAM",
+      "league": "WHL",
+      "division": "B.C.",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 34,
+    "fields": {
+      "city": "Kelowna",
+      "name": "Rockets",
+      "abr": "KEL",
+      "league": "WHL",
+      "division": "B.C.",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 35,
+    "fields": {
+      "city": "Prince George",
+      "name": "Cougars",
+      "abr": "PG",
+      "league": "WHL",
+      "division": "B.C.",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 36,
+    "fields": {
+      "city": "Vancouver",
+      "name": "Giants",
+      "abr": "VAN",
+      "league": "WHL",
+      "division": "B.C.",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 37,
+    "fields": {
+      "city": "Victoria",
+      "name": "Royals",
+      "abr": "ROY",
+      "league": "WHL",
+      "division": "B.C.",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 38,
+    "fields": {
+      "city": "Everett",
+      "name": "Silvertips",
+      "abr": "EVT",
+      "league": "WHL",
+      "division": "U.S.",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 39,
+    "fields": {
+      "city": "Portland",
+      "name": "Winterhawks",
+      "abr": "POR",
+      "league": "WHL",
+      "division": "U.S.",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 40,
+    "fields": {
+      "city": "Seattle",
+      "name": "Thunderbirds",
+      "abr": "SEA",
+      "league": "WHL",
+      "division": "U.S.",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 41,
+    "fields": {
+      "city": "Spokane",
+      "name": "Chiefs",
+      "abr": "SPO",
+      "league": "WHL",
+      "division": "U.S.",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 42,
+    "fields": {
+      "city": "Tri-City",
+      "name": "Americans",
+      "abr": "TC",
+      "league": "WHL",
+      "division": "U.S.",
+      "conference": "Western"
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 43,
+    "fields": {
+      "city": "Blainville-Boisbriand",
+      "name": "Armada",
+      "abr": "ARM",
+      "league": "QMJHL",
+      "division": "West",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 44,
+    "fields": {
+      "city": "Drummondville",
+      "name": "Voltigeurs",
+      "abr": "VOL",
+      "league": "QMJHL",
+      "division": "West",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 45,
+    "fields": {
+      "city": "Gatineau",
+      "name": "Olympiques",
+      "abr": "OLY",
+      "league": "QMJHL",
+      "division": "West",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 46,
+    "fields": {
+      "city": "Rouyn-Noranda",
+      "name": "Huskies",
+      "abr": "HUS",
+      "league": "QMJHL",
+      "division": "West",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 47,
+    "fields": {
+      "city": "Sherbrooke",
+      "name": "Phoenix",
+      "abr": "PHO",
+      "league": "QMJHL",
+      "division": "West",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 48,
+    "fields": {
+      "city": "Val-d'Or",
+      "name": "Foreurs",
+      "abr": "VOF",
+      "league": "QMJHL",
+      "division": "West",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 49,
+    "fields": {
+      "city": "Baie-Comeau",
+      "name": "Drakkar",
+      "abr": "BCD",
+      "league": "QMJHL",
+      "division": "East",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 50,
+    "fields": {
+      "city": "Chicoutimi",
+      "name": "Saguenéens",
+      "abr": "CHI",
+      "league": "QMJHL",
+      "division": "East",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 51,
+    "fields": {
+      "city": "Quebec",
+      "name": "Remparts",
+      "abr": "RAM",
+      "league": "QMJHL",
+      "division": "East",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 52,
+    "fields": {
+      "city": "Rimouski",
+      "name": "Océanic",
+      "abr": "RIM",
+      "league": "QMJHL",
+      "division": "East",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 53,
+    "fields": {
+      "city": "Shawinigan",
+      "name": "Cataractes",
+      "abr": "SHA",
+      "league": "QMJHL",
+      "division": "East",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 54,
+    "fields": {
+      "city": "Victoriaville",
+      "name": "Tigres",
+      "abr": "VIC",
+      "league": "QMJHL",
+      "division": "East",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 55,
+    "fields": {
+      "city": "Acadie–Bathurst",
+      "name": "Titan",
+      "abr": "ABT",
+      "league": "QMJHL",
+      "division": "Maritimes",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 56,
+    "fields": {
+      "city": "Cape Breton",
+      "name": "Screaming Eagles",
+      "abr": "CPS",
+      "league": "QMJHL",
+      "division": "Maritimes",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 57,
+    "fields": {
+      "city": "Charlottetown",
+      "name": "Islanders",
+      "abr": "ISL",
+      "league": "QMJHL",
+      "division": "Maritimes",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 58,
+    "fields": {
+      "city": "Halifax",
+      "name": "Mooseheads",
+      "abr": "HAL",
+      "league": "QMJHL",
+      "division": "Maritimes",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 59,
+    "fields": {
+      "city": "Moncton",
+      "name": "Wildcats",
+      "abr": "MON",
+      "league": "QMJHL",
+      "division": "Maritimes",
+      "conference": ""
+    }
+  },
+  {
+    "model": "h_leagues.team",
+    "pk": 60,
+    "fields": {
+      "city": "Saint John",
+      "name": "Sea Dogs",
+      "abr": "SJSD",
+      "league": "QMJHL",
+      "division": "Maritimes",
+      "conference": ""
+    }
+  }
+]

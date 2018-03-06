@@ -1,0 +1,64 @@
+{% load staticfiles %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canadien Hockey League -- my django APP</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="{% url 'leagues:index' %}" class="brand-logo center"
+           style="font-weight: bolder; font-family: 'Lobster Two'; font-size: 45px"> Canadien Hockey League </a>
+    </div>
+</nav>
+
+<div class="row" style="padding-top: 1em">
+    <div class="col l3">
+        <!-- Painel -->
+        <div class="row z-depth-4">
+            <a class="col l12 waves-effect waves-light btn"
+               style="background-color: lightcyan; color: blue; font-weight: bolder" href="{% url 'leagues:liga' 'QMJHL' %}"> QMJHL </a>
+            <a class="col l4 waves-effect waves-light btn"
+               style="background-color: lightcyan; color: blue; font-weight: bolder" href="{% url 'leagues:standings' 'QMJHL' %}"> Standings </a>
+            <a class="col l4 waves-effect waves-light btn"
+               style="background-color: lightcyan; color: blue; font-weight: bolder"> Schedule </a>
+            <a class="col l4 waves-effect waves-light btn"
+               style="background-color: lightcyan; color: blue; font-weight: bolder" href="{% url 'leagues:postseason' 'QMJHL' %}"> Playoffs </a>
+        </div>
+        <div class="row z-depth-4">
+            <a class="col l12 waves-effect waves-light btn"
+               style="background-color: dodgerblue; color: azure; font-weight: bolder" href="{% url 'leagues:liga' 'OHL' %}"> OHL </a>
+            <a class="col l4 waves-effect waves-light btn"
+               style="background-color: dodgerblue; color: azure; font-weight: bolder" href="{% url 'leagues:standings' 'OHL' %}"> Standings </a>
+            <a class="col l4 waves-effect waves-light btn"
+               style="background-color: dodgerblue; color: azure; font-weight: bolder"> Schedule </a>
+            <a class="col l4 waves-effect waves-light btn"
+               style="background-color: dodgerblue; color: azure; font-weight: bolder" href="{% url 'leagues:postseason' 'OHL' %}"> Playoffs </a>
+        </div>
+        <div class="row z-depth-4">
+            <a class="col l12 waves-effect waves-light btn"
+               style="background-color: red; color: black; font-weight: bolder" href="{% url 'leagues:liga' 'WHL' %}"> WHL </a>
+            <a class="col l4 waves-effect waves-light btn"
+               style="background-color: red; color: black; font-weight: bolder" href="{% url 'leagues:standings' 'WHL' %}"> Standings </a>
+            <a class="col l4 waves-effect waves-light btn"
+               style="background-color: red; color: black; font-weight: bolder"> Schedule </a>
+            <a class="col l4 waves-effect waves-light btn"
+               style="background-color: red; color: black; font-weight: bolder" href="{% url 'leagues:postseason' 'WHL' %}"> Playoffs </a>
+        </div>
+    </div>
+    <div class="col l9">
+        {% block mainblock %}
+        
+        {% endblock %}
+    </div>
+</div>
+
+</body>
+</html>

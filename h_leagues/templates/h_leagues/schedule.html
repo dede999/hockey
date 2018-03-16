@@ -1,0 +1,30 @@
+{% extends 'h_leagues/base.html' %}
+
+{% block mainblock %}
+    <div class="row">
+        <div class="col s6">
+            <h4> Next games </h4> <hr>
+            <table>
+                <thead>
+                    <tr>
+                        <td> Away </td>
+                        <td> Home </td>
+                        <td> Play </td>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for m in nP %}
+                    <tr>
+                        <td> {{ m.away }} </td>
+                        <td> {{ m.home }} </td>
+                        <td> <a href="{% url 'leagues:simulation' m.pk %}"> Jogar </a> </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col s6">
+            <h4> Past games </h4> <hr>
+        </div>
+    </div>
+{% endblock %}

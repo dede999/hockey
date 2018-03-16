@@ -1,15 +1,21 @@
-from django.shortcuts import render
-# from django.http import HttpResponseRedirect
 from .models import *
+import random
+from django.shortcuts import render
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
     tt = Team.objects.order_by('pts', 'diff', 'gf', 'city')[:10]
-    return render(request, 'h_leagues/index.html', {'teams': tt})
+    w = Match.objects.filter(league='WHL').order_by('pk')[:4]
+    o = Match.objects.filter(league='OHL').order_by('pk')[:4]
+    q = Match.objects.filter(league='QMJHL').order_by('pk')[:4]
+    return render(request, 'h_leagues/index.html', {'teams': tt, 'whl': w, 'qmjhl': q, 'ohl': o})
 
 def league(request, liga):
     tt = Team.objects.filter(league=liga).order_by('pts', 'diff', 'gf', 'city')
-    return render(request, 'h_leagues/leagues.html', {'teams': tt})
+    games = Match.objects.filter(league=liga).order_by('pk')[:8]
+    return render(request, 'h_leagues/leagues.html', {'teams': tt, 'gg': games})
 
 def standings(request, liga):
     conf1 = []
@@ -111,3 +117,48 @@ def schedule(request, liga):
     played = Match.objects.filter(league=liga, resultado=('f', 'ot', 'so')).order_by('pk')
     # po = [] # postseason
     return render(request, 'h_leagues/schedule.html', {'P': played, 'nP': not_played})
+
+def simulation(request, match_id):
+    partida = Match.objects.get(pk=match_id)
+    home = Team.objects.filter(abr=partida.home)
+    away = Team.objects.filter(abr=partida.away)
+    if not partida.resultado:
+        h = random.randint(0, 6)
+        a = random.randint(0, 6)
+        if h == a:
+            if (random.uniform(0.00, 0.99) < 0.25):
+                partida.resultado = 'so'
+            else:
+                partida.resultado = 'ot'
+            if (random.uniform(0.00, 0.99) < 0.60):
+                h += 1
+                home.wins += 1
+                if partida.resultado == 'so':
+                    away.sol += 1
+                else:
+                    away.otl += 1
+            else:
+                a += 1
+                away.wins += 1
+                if partida.resultado == 'so':
+                    home.sol += 1
+                else:
+                    home.otl += 1
+        else:
+            partida.resultado = 'f'
+            if h > a:
+                home.wins += 1
+                away.loss += 1
+            else:
+                home.wins += 1
+                away.loss += 1
+        partida.h_score += h
+        partida.a_score += a
+        home.gf += h
+        home.ga += a
+        away.gf += a
+        away.gf += h
+        home.save()
+        away.save()
+        partida.save()
+    return render(request, 'h_leagues/match.html', {'partida': partida, 'casa': home, 'fora': away})

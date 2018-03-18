@@ -6,7 +6,7 @@
             <h4> Next games </h4> <hr>
             <table>
                 <thead>
-                    <tr>
+                    <tr class="z-depth-1">
                         <td> Away </td>
                         <td> Home </td>
                         <td> Play </td>
@@ -14,10 +14,11 @@
                 </thead>
                 <tbody>
                 {% for m in nP %}
-                    <tr>
+                    <tr class="z-depth-1">
                         <td> {{ m.away }} </td>
                         <td> {{ m.home }} </td>
-                        <td> <a href="{% url 'leagues:simulation' m.pk %}"> Jogar </a> </td>
+                        <td> Play </td>
+{#                        <td> <a href="{% url 'leagues:simulation' m.pk %}"> Jogar </a> </td>#}
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -25,6 +26,31 @@
         </div>
         <div class="col s6">
             <h4> Past games </h4> <hr>
+            <table>
+                <thead>
+                    <tr class="z-depth-1">
+                        <td> Match </td>
+                        <td> Score </td>
+                        <td>  </td>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for m in P %}
+                    <tr class="z-depth-1">
+                        <td style="font-weight: bolder;">
+                            {% if m.winner == m.home %}
+                                <span style="color: red"> {{ m.away }} </span> : <span style="color: blue"> {{ m.home }} </span>
+                            {% else %}
+                                <span style="color: blue"> {{ m.away }} </span> : <span style="color: red"> {{ m.home }} </span>
+                            {% endif %}
+                        </td>
+                        <td> {{ m.a_score }}-{{ m.h_score }} </td>
+{#                        <td> <a href="{% url 'leagues:simulation' m.pk %}"> Jogar </a> </td>#}
+                        <td style="font-weight: bolder"> {{ m.get_resultado_display }} </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 {% endblock %}

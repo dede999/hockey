@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
-    tt = Team.objects.order_by('pts', 'diff', 'gf', 'city')[:10]
+    tt = Team.objects.order_by('-pts', '-diff', '-gf', 'city')[:10]
     w = Match.objects.filter(league='WHL').order_by('pk')[:4]
     o = Match.objects.filter(league='OHL').order_by('pk')[:4]
     q = Match.objects.filter(league='QMJHL').order_by('pk')[:4]
@@ -21,9 +21,9 @@ def standings(request, liga):
     conf1 = []
     conf2 = []
     if liga == 'QMJHL':
-        div1 = Team.objects.filter(league=liga, division='West').order_by('pts', 'diff', 'gf', 'city')
-        div2 = Team.objects.filter(league=liga, division='East').order_by('pts', 'diff', 'gf', 'city')
-        div3 = Team.objects.filter(league=liga, division='Maritimes').order_by('pts', 'diff', 'gf', 'city')
+        div1 = Team.objects.filter(league=liga, division='West').order_by('-pts', '-diff', '-gf', 'city')
+        div2 = Team.objects.filter(league=liga, division='East').order_by('-pts', '-diff', '-gf', 'city')
+        div3 = Team.objects.filter(league=liga, division='Maritimes').order_by('-pts', '-diff', '-gf', 'city')
         lideres = [div1[0], div2[0], div3[0]]
         rest = []
         for i in range(1,6):
@@ -39,10 +39,10 @@ def standings(request, liga):
         return render(request, 'h_leagues/standings.html',
                       {'q_west': div1, 'q_east': div2, 'q_marit': div3, 'total': conf1, 'league': liga})
     elif liga == 'OHL':
-        div1 = Team.objects.filter(league=liga, division='East', conference='Eastern').order_by('pts', 'diff', 'gf', 'city')
-        div2 = Team.objects.filter(league=liga, division='Central', conference='Eastern').order_by('pts', 'diff', 'gf', 'city')
-        div3 = Team.objects.filter(league=liga, division='Midwest', conference='Western').order_by('pts', 'diff', 'gf', 'city')
-        div4 = Team.objects.filter(league=liga, division='West', conference='Western').order_by('pts', 'diff', 'gf', 'city')
+        div1 = Team.objects.filter(league=liga, division='East', conference='Eastern').order_by('-pts', '-diff', '-gf', 'city')
+        div2 = Team.objects.filter(league=liga, division='Central', conference='Eastern').order_by('-pts', '-diff', '-gf', 'city')
+        div3 = Team.objects.filter(league=liga, division='Midwest', conference='Western').order_by('-pts', '-diff', '-gf', 'city')
+        div4 = Team.objects.filter(league=liga, division='West', conference='Western').order_by('-pts', '-diff', '-gf', 'city')
         el = [div1[0], div2[0]]
         wl = [div3[0], div4[0]]
         er = []
@@ -69,10 +69,10 @@ def standings(request, liga):
                            'o_west': div4, 'EC': conf1, 'WC': conf2, 'league': liga})
     else:
         # ---- WHL ----
-        div1 = Team.objects.filter(league=liga, division='East', conference='Eastern').order_by('pts', 'diff', 'gf', 'city')
-        div2 = Team.objects.filter(league=liga, division='Central', conference='Eastern').order_by('pts', 'diff', 'gf', 'city')
-        div3 = Team.objects.filter(league=liga, division='B.C.', conference='Western').order_by('pts', 'diff', 'gf', 'city')
-        div4 = Team.objects.filter(league=liga, division='U.S.', conference='Western').order_by('pts', 'diff', 'gf', 'city')
+        div1 = Team.objects.filter(league=liga, division='East', conference='Eastern').order_by('-pts', '-diff', '-gf', 'city')
+        div2 = Team.objects.filter(league=liga, division='Central', conference='Eastern').order_by('-pts', '-diff', '-gf', 'city')
+        div3 = Team.objects.filter(league=liga, division='B.C.', conference='Western').order_by('-pts', '-diff', '-gf', 'city')
+        div4 = Team.objects.filter(league=liga, division='U.S.', conference='Western').order_by('-pts', '-diff', '-gf', 'city')
         for wc in range(3,6):
             conf1.append(div1[wc])
             conf1.append(div2[wc])
@@ -112,16 +112,24 @@ def playoffs(request, liga):
         return render(request, 'h_leagues/postseason.html',
                       {'liga': liga, 'r1e': r1e, 'r1w': r1w, 'r2e': r2e, 'r2w': r2w, 'r3e': r3e, 'r3w': r3w, 'r4': r4})
 
+# noinspection PyArgumentList
 def schedule(request, liga):
     not_played = Match.objects.filter(league=liga, resultado='').order_by('pk')
-    played = Match.objects.filter(league=liga, resultado=('f', 'ot', 'so')).order_by('pk')
+    played = []
+    for m in Match.objects.filter(league=liga, resultado='f'):
+        played.append(m)
+    for m in Match.objects.filter(league=liga, resultado='ot'):
+        played.append(m)
+    for m in Match.objects.filter(league=liga, resultado='so'):
+        played.append(m)
+    played.sort()
     # po = [] # postseason
     return render(request, 'h_leagues/schedule.html', {'P': played, 'nP': not_played})
 
 def simulation(request, match_id):
     partida = Match.objects.get(pk=match_id)
-    home = Team.objects.filter(abr=partida.home)
-    away = Team.objects.filter(abr=partida.away)
+    home = Team.objects.filter(abr=partida.home)[0]
+    away = Team.objects.filter(abr=partida.away)[0]
     if not partida.resultado:
         h = random.randint(0, 6)
         a = random.randint(0, 6)
@@ -133,6 +141,8 @@ def simulation(request, match_id):
             if (random.uniform(0.00, 0.99) < 0.60):
                 h += 1
                 home.wins += 1
+                home.pts += 2
+                away.pts += 1
                 if partida.resultado == 'so':
                     away.sol += 1
                 else:
@@ -140,6 +150,8 @@ def simulation(request, match_id):
             else:
                 a += 1
                 away.wins += 1
+                away.pts += 2
+                home.pts += 1
                 if partida.resultado == 'so':
                     home.sol += 1
                 else:
@@ -149,11 +161,13 @@ def simulation(request, match_id):
             if h > a:
                 home.wins += 1
                 away.loss += 1
+                home.pts += 2
             else:
-                home.wins += 1
-                away.loss += 1
-        partida.h_score += h
-        partida.a_score += a
+                away.wins += 1
+                home.loss += 1
+                away.pts += 2
+        partida.h_score = h
+        partida.a_score = a
         home.gf += h
         home.ga += a
         away.gf += a
@@ -162,3 +176,7 @@ def simulation(request, match_id):
         away.save()
         partida.save()
     return render(request, 'h_leagues/match.html', {'partida': partida, 'casa': home, 'fora': away})
+
+# from h_leagues.models import *
+# m = Match.objects.first
+# h = Team.objects.filter(abr=m.home)[0]

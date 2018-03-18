@@ -38,16 +38,13 @@ class Team(models.Model):
 
     def __lt__(self, other):
         if self.pts != other.pts:
-            return self.pts < other.pts
+            return self.pts > other.pts
         elif self.diff != other.diff:
-            return self.diff < other.diff
+            return self.diff > other.diff
         elif self.gf != other.gf:
             return self.gf < other.gf
         elif self.city != other.city:
             return  self.city < other.city
-
-    def __gt__(self, other):
-        return not self.__lt__(other)
 
     def games(self):
         return self.wins + self.loss + self.otl + self.sol
@@ -57,7 +54,7 @@ class Team(models.Model):
         if jogos == 0:
             return '0.000'
         else:
-            return (self.pts/(jogos*2))
+            return '%05.3f' % (self.pts/(jogos*2))
 
 
 class POseries(models.Model):
@@ -80,6 +77,10 @@ class Match(models.Model):
     league = models.CharField(max_length=5, choices=LEAGUES)
     resultado = models.CharField(max_length=2, choices=RESULTADOS, default='')
     winner = models.CharField(max_length=50, default='')
+
+    def __lt__(self, other):
+        return self.pk < other.pk
+
 
 # Create your models here.
 # from h_leagues.models import *

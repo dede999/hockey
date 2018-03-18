@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86c3ad2a-562e-4700-bc86-f8eab42c51a5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/h_leagues/templates/h_leagues/match.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/h_leagues/fixtures/games.json" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/fixtures/games.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/h_leagues/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h_leagues/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h_leagues/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,20 +21,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/h_leagues/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="842">
-              <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+            <state relative-caret-position="60">
+              <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+              <folding>
+                <element signature="e#579#800#0" />
+                <element signature="e#3995#6091#0" />
+                <element signature="e#6126#6406#0" />
+                <element signature="e#6624#7721#0" />
+                <element signature="e#6921#7094#0" />
+                <element signature="e#7129#7302#0" />
+                <element signature="e#7728#7975#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schedule.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="schedule.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+            <state relative-caret-position="272">
+              <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+              <folding>
+                <element signature="e#1274#1289#0#HTML" expanded="true" />
+                <element signature="e#1394#1412#0#HTML" expanded="true" />
+                <element signature="e#1443#1462#0#HTML" expanded="true" />
+                <element signature="e#1566#1585#0#HTML" expanded="true" />
+                <element signature="e#1616#1634#0#HTML" expanded="true" />
+                <element signature="e#1954#1981#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -43,13 +60,7 @@
         <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/match.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-              <folding>
-                <element signature="e#153#197#0#HTML" expanded="true" />
-                <element signature="e#229#273#0#HTML" expanded="true" />
-                <element signature="e#406#471#0#HTML" expanded="true" />
-                <element signature="e#529#594#0#HTML" expanded="true" />
-              </folding>
+              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -57,8 +68,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            <state relative-caret-position="330">
+              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -87,14 +98,21 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/h_leagues/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+            <state relative-caret-position="615">
+              <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
               <folding>
                 <element signature="e#1074#1113#0" />
-                <element signature="e#1152#1450#0" />
-                <element signature="e#1489#1518#0" />
                 <element signature="e#1549#1599#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="games.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/h_leagues/fixtures/games.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15041">
+              <caret line="7110" column="4" lean-forward="true" selection-start-line="7110" selection-start-column="4" selection-end-line="7110" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -113,6 +131,8 @@
     <findStrings>
       <find>egue</find>
       <find>VIC</find>
+      <find>LDN</find>
+      <find>LON</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,13 +153,13 @@
         <option value="$PROJECT_DIR$/h_leagues/fixtures/po.json" />
         <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/postseason.html" />
         <option value="$PROJECT_DIR$/h_leagues/fixtures/data.json" />
-        <option value="$PROJECT_DIR$/h_leagues/models.py" />
-        <option value="$PROJECT_DIR$/h_leagues/fixtures/games.json" />
         <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html" />
         <option value="$PROJECT_DIR$/h_leagues/urls.py" />
-        <option value="$PROJECT_DIR$/h_leagues/views.py" />
         <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/match.html" />
+        <option value="$PROJECT_DIR$/h_leagues/fixtures/games.json" />
+        <option value="$PROJECT_DIR$/h_leagues/models.py" />
         <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html" />
+        <option value="$PROJECT_DIR$/h_leagues/views.py" />
       </list>
     </option>
   </component>
@@ -161,7 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -173,6 +192,12 @@
               <item name="hockey" type="b2602c69:ProjectViewProjectNode" />
               <item name="hockey" type="462c0819:PsiDirectoryNode" />
               <item name="h_leagues" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hockey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hockey" type="462c0819:PsiDirectoryNode" />
+              <item name="h_leagues" type="462c0819:PsiDirectoryNode" />
+              <item name="fixtures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hockey" type="b2602c69:ProjectViewProjectNode" />
@@ -201,6 +226,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -265,10 +291,11 @@
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50073206" side_tool="true" weight="0.32866043" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49926794" visible="true" weight="0.32917318" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49926794" visible="true" weight="0.32917318" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24524158" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
@@ -277,10 +304,10 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32866043" />
     </layout>
@@ -290,6 +317,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/h_leagues/urls.py">
@@ -550,20 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/h_leagues/fixtures/games.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="18756" column="3" lean-forward="true" selection-start-line="18756" selection-start-column="3" selection-end-line="18756" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h_leagues/fixtures/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="553" column="2" selection-start-line="553" selection-start-column="2" selection-end-line="553" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/postseason.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8955">
@@ -581,50 +599,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/h_leagues/models.py">
+    <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
-          <folding>
-            <element signature="e#1074#1113#0" />
-            <element signature="e#1152#1450#0" />
-            <element signature="e#1489#1518#0" />
-            <element signature="e#1549#1599#0" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/h_leagues/views.py">
+    <entry file="file://$PROJECT_DIR$/h_leagues/fixtures/data.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="842">
-          <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+        <state relative-caret-position="-3648">
+          <caret line="159" column="13" lean-forward="true" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h_leagues/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+          <folding>
+            <element signature="e#1074#1113#0" />
+            <element signature="e#1549#1599#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/match.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding>
-            <element signature="e#153#197#0#HTML" expanded="true" />
-            <element signature="e#229#273#0#HTML" expanded="true" />
-            <element signature="e#406#471#0#HTML" expanded="true" />
-            <element signature="e#529#594#0#HTML" expanded="true" />
-          </folding>
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html">
+    <entry file="file://$PROJECT_DIR$/h_leagues/fixtures/games.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        <state relative-caret-position="15041">
+          <caret line="7110" column="4" lean-forward="true" selection-start-line="7110" selection-start-column="4" selection-end-line="7110" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+        <state relative-caret-position="272">
+          <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+          <folding>
+            <element signature="e#1274#1289#0#HTML" expanded="true" />
+            <element signature="e#1394#1412#0#HTML" expanded="true" />
+            <element signature="e#1443#1462#0#HTML" expanded="true" />
+            <element signature="e#1566#1585#0#HTML" expanded="true" />
+            <element signature="e#1616#1634#0#HTML" expanded="true" />
+            <element signature="e#1954#1981#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h_leagues/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+          <folding>
+            <element signature="e#579#800#0" />
+            <element signature="e#3995#6091#0" />
+            <element signature="e#6126#6406#0" />
+            <element signature="e#6624#7721#0" />
+            <element signature="e#6921#7094#0" />
+            <element signature="e#7129#7302#0" />
+            <element signature="e#7728#7975#0" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,7 +1,7 @@
 {% extends 'h_leagues/base.html' %}
 
 {% block mainblock %}
-    <a href="#"> Back to schedule </a>
+    <a href="{% url 'leagues:schedule' partida.league %}"> Back to {{ partida.league }} schedule (Temporary View) </a>
 
     <div class="row">
         <div class="col s6" style="font-size: large;font-weight: bolder">
@@ -15,4 +15,12 @@
         <div class="col s6" style="font-size: 40px;font-weight: bolder;align-content: center"> {{ partida.a_score }}</div>
         <div class="col s6" style="font-size: 40px;font-weight: bolder;align-content: center"> {{ partida.h_score }}</div>
     </div>
+
+    {% if partida.resultado == 'f' %}
+        <h2 style="font-weight: bolder"> {{ victory.name }} wins in Regulation </h2>
+    {% elif partida.resultado == 'ot' %}
+        <h2 style="font-weight: bolder"> {{ victory.name }} wins in OT </h2>
+    {% elif partida.resultado == 'so' %}
+        <h2 style="font-weight: bolder"> {{ victory.name }} wins in <SO></SO> </h2>
+    {% endif %}
 {% endblock %}

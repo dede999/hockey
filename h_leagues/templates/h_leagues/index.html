@@ -2,11 +2,79 @@
 
 {% block mainblock %}
 
-    <ol>
-    {% for team in teams %}
-        <li>{{ team.city }} {{ team.name }} -- {{ team.league }}</li>
-    {% endfor %}
+    <div class="row">
+        <div class="col l4 card z-depth-2">
+            <h4 class="header"> QMJHL </h4>
+            {% for q in qmjhl %}
+                <p> {{ q.away }} @ {{ q.home }} <button class="btn waves-effect waves-light">Play
+                    <i class="material-icons">play_circle_filled</i></button> </p> <hr>
+            {% endfor %}
+        </div>
+        <div class="col l4 card z-depth-2">
+            <h4 class="header"> OHL </h4>
+            {% for o in ohl %}
+                <p> {{ o.away }} @ {{ o.home }} <button class="btn waves-effect waves-light">Play
+                    <i class="material-icons">play_circle_filled</i></button> </p> <hr>
+            {% endfor %}
+        </div>
+        <div class="col l4 card z-depth-2">
+            <h4 class="header"> WHL </h4>
+            {% for w in whl %}
+                <p> {{ w.away }} @ {{ w.home }} <button class="btn waves-effect waves-light">Play
+                    <i class="material-icons">play_circle_filled</i></button> </p> <hr>
+            {% endfor %}
+        </div>
+    </div>
 
-    </ol>
+<table class="striped z-depth-4">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> CHL Top 15 </th>
+                    <th> Pts </th>
+                    <th> G </th>
+                    <th> W </th>
+                    <th> L </th>
+                    <th> OTL </th>
+                    <th> SOL </th>
+                    <th> GF </th>
+                    <th> GA </th>
+                    <th> DIFF </th>
+                    <th> PCT </th>
+                    <th> Streak </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for qw in teams %}
+                <tr>
+                    <th> {{ forloop.counter }} </th>
+                    {% if qw.league == 'OHL' %}
+                        <th> {{ qw.city }} {{ qw.name }}
+                            <span class="badge blue lighten-5 blue-text" style="font-size: x-small">
+                                {{ qw.league.upper }} </span> </th>
+                    {% elif qw.league == 'WHL' %}
+                        <th> {{ qw.city }} {{ qw.name }}
+                            <span class="badge red lighten-5 red-text" style="font-size: x-small">
+                                {{ qw.league.upper }} </span> </th>
+                    {% else %}
+                        <th> {{ qw.city }} {{ qw.name }}
+                            <span class="badge gray lighten-2" style="font-size: x-small">
+                                {{ qw.league.upper }} </span> </th>
+                    {% endif %}
+                    <th> {{ qw.pts }} </th>
+                    <th> {{ qw.games }}</th>
+                    <th> {{ qw.wins }}</th>
+                    <th> {{ qw.loss }}</th>
+                    <th> {{ qw.otl }} </th>
+                    <th> {{ qw.sol }}</th>
+                    <th> {{ qw.gf }} </th>
+                    <th> {{ qw.ga }} </th>
+                    <th> {{ qw.diff }} </th>
+                    <th> {{ qw.pct }} </th>
+                    <th> {{ qw.streak }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
 {% endblock %}

@@ -9,5 +9,5 @@ urlpatterns = [
     path('<str:liga>/standings', views.standings, name='standings'),
     path('<str:liga>/postseason', views.playoffs, name='postseason'),
     path('<str:liga>/schedule', views.schedule, name='schedule'),
-    path('<int:match_id/simulation>', views.simulation, name='simulation')
+    path('<int:match_id>/simulation', views.simulation, name='simulation')
 ]

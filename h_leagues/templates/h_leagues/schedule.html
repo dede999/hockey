@@ -17,8 +17,8 @@
                     <tr class="z-depth-1">
                         <td> {{ m.away }} </td>
                         <td> {{ m.home }} </td>
-                        <td> Play </td>
-{#                        <td> <a href="{% url 'leagues:simulation' m.pk %}"> Jogar </a> </td>#}
+{#                        <td> Play </td>#}
+                        <td> <a href="{% url 'leagues:simulation' m.pk %}"> Jogar </a> </td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -45,7 +45,6 @@
                             {% endif %}
                         </td>
                         <td> {{ m.a_score }}-{{ m.h_score }} </td>
-{#                        <td> <a href="{% url 'leagues:simulation' m.pk %}"> Jogar </a> </td>#}
                         <td style="font-weight: bolder"> {{ m.get_resultado_display }} </td>
                     </tr>
                 {% endfor %}

@@ -6,14 +6,14 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
-    tt = Team.objects.order_by('-pts', '-diff', '-gf', 'city')[:10]
+    tt = Team.objects.order_by('-pts', '-diff', '-gf', 'city')[:15]
     w = Match.objects.filter(league='WHL').order_by('pk')[:4]
     o = Match.objects.filter(league='OHL').order_by('pk')[:4]
     q = Match.objects.filter(league='QMJHL').order_by('pk')[:4]
     return render(request, 'h_leagues/index.html', {'teams': tt, 'whl': w, 'qmjhl': q, 'ohl': o})
 
 def league(request, liga):
-    tt = Team.objects.filter(league=liga).order_by('pts', 'diff', 'gf', 'city')
+    tt = Team.objects.filter(league=liga).order_by('-pts', '-diff', '-gf', 'city')
     games = Match.objects.filter(league=liga).order_by('pk')[:8]
     return render(request, 'h_leagues/leagues.html', {'teams': tt, 'gg': games})
 
@@ -131,52 +131,74 @@ def simulation(request, match_id):
     home = Team.objects.filter(abr=partida.home)[0]
     away = Team.objects.filter(abr=partida.away)[0]
     if not partida.resultado:
-        h = random.randint(0, 6)
-        a = random.randint(0, 6)
-        if h == a:
-            if (random.uniform(0.00, 0.99) < 0.25):
+        h = random.randint(0, 5)
+        a = random.randint(0, 5)
+        if h == a: # overtime
+            if (random.uniform(0.00, 0.99) < 0.35):
                 partida.resultado = 'so'
             else:
                 partida.resultado = 'ot'
             if (random.uniform(0.00, 0.99) < 0.60):
                 h += 1
+                home.seq("W")
+                partida.winner = partida.home
+                win = home
                 home.wins += 1
                 home.pts += 2
                 away.pts += 1
                 if partida.resultado == 'so':
                     away.sol += 1
+                    away.seq("SOL")
                 else:
                     away.otl += 1
+                    away.seq("OTL")
             else:
                 a += 1
+                partida.winner = partida.away
+                win = away
+                away.seq("W")
                 away.wins += 1
                 away.pts += 2
                 home.pts += 1
                 if partida.resultado == 'so':
                     home.sol += 1
+                    home.seq("SOL")
                 else:
                     home.otl += 1
+                    home.seq("OTL")
         else:
             partida.resultado = 'f'
             if h > a:
+                partida.winner = partida.home
+                win = home
                 home.wins += 1
                 away.loss += 1
                 home.pts += 2
+                home.seq("W")
+                away.seq("L")
             else:
+                partida.winner = partida.away
+                win = away
                 away.wins += 1
                 home.loss += 1
                 away.pts += 2
+                away.seq("W")
+                home.seq("L")
         partida.h_score = h
         partida.a_score = a
         home.gf += h
         home.ga += a
         away.gf += a
-        away.gf += h
+        away.ga += h
+        home.diff = home.gf - home.ga
+        away.diff = away.gf - away.ga
         home.save()
         away.save()
         partida.save()
-    return render(request, 'h_leagues/match.html', {'partida': partida, 'casa': home, 'fora': away})
+    win = Team.objects.get(abr=partida.winner)
+    return render(request, 'h_leagues/match.html', {'partida': partida, 'casa': home, 'fora': away, 'victory': win})
 
 # from h_leagues.models import *
 # m = Match.objects.first
 # h = Team.objects.filter(abr=m.home)[0]
+# git commit -m "Simulations now work, and so standings. Improvements on the templates"

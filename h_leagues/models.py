@@ -31,7 +31,7 @@ class Team(models.Model):
     gf = models.IntegerField(default=0)
     ga = models.IntegerField(default=0)
     diff = models.IntegerField(default=0)
-    streak = models.CharField(max_length=3, default='W0')
+    streak = models.CharField(max_length=3, default='W 0')
 
     def __str__(self):
         return "%s %s" % (self.city, self.name)
@@ -42,9 +42,19 @@ class Team(models.Model):
         elif self.diff != other.diff:
             return self.diff > other.diff
         elif self.gf != other.gf:
-            return self.gf < other.gf
+            return self.gf > other.gf
         elif self.city != other.city:
             return  self.city < other.city
+
+    def seq(self, result):
+        r = (self.streak).split(" ")
+        if result == r[0]:
+            s = int(r[1]) + 1
+            self.streak = "%s %d" % (r[0], s)
+            self.save()
+        else:
+            self.streak = "%s 1" % result
+            self.save()
 
     def games(self):
         return self.wins + self.loss + self.otl + self.sol
@@ -79,7 +89,7 @@ class Match(models.Model):
     winner = models.CharField(max_length=50, default='')
 
     def __lt__(self, other):
-        return self.pk < other.pk
+        return self.pk > other.pk
 
 
 # Create your models here.

@@ -1,9 +1,16 @@
 {% extends 'h_leagues/base.html' %}
 
+{% block chips %}
+    {% if msg %}
+        <div class="chip" style="font-size: larger; font-weight: bolder"> {{ msg }} </div>
+        <div class="chip" style="font-size: larger; font-weight: bolder"> {{ result }} </div>
+    {% endif %}
+{% endblock %}
+
 {% block mainblock %}
     <div class="row">
         <div class="col s6">
-            <h4> Next games </h4> <hr>
+            <h4> Next games  <span style="font-size: x-small"> {{ nP.count }} </span> </h4> <hr>
             <table>
                 <thead>
                     <tr class="z-depth-1">

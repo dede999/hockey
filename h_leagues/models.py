@@ -23,6 +23,7 @@ class Team(models.Model):
     league = models.CharField(max_length=5, choices=LEAGUES)
     conference = models.CharField(max_length=30, default='')
     division = models.CharField(max_length=30, default='')
+    seed = models.IntegerField(default=1)
     pts = models.IntegerField(default=0)
     wins = models.IntegerField(default=0)
     loss = models.IntegerField(default=0)

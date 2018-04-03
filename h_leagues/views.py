@@ -20,6 +20,8 @@ def league(request, liga):
 def standings(request, liga):
     conf1 = []
     conf2 = []
+    s = 1
+    ss = 1
     if liga == 'QMJHL':
         div1 = Team.objects.filter(league=liga, division='West').order_by('-pts', '-diff', '-gf', 'city')
         div2 = Team.objects.filter(league=liga, division='East').order_by('-pts', '-diff', '-gf', 'city')
@@ -34,8 +36,15 @@ def standings(request, liga):
         rest.sort()
         for t in lideres:
             conf1.append(t)
+            t.seed = s
+            t.save()
+            s += 1
         for t in rest:
             conf1.append(t)
+            t.seed = s
+            t.save()
+            s += 1
+
         return render(request, 'h_leagues/standings.html',
                       {'q_west': div1, 'q_east': div2, 'q_marit': div3, 'total': conf1, 'league': liga})
     elif liga == 'OHL':
@@ -58,15 +67,27 @@ def standings(request, liga):
         wr.sort()
         for t in el:
             conf1.append(t)
+            t.seed = s
+            t.save()
+            s += 1
         for t in wl:
             conf2.append(t)
+            t.seed = ss
+            t.save()
+            ss += 1
         for t in er:
             conf1.append(t)
+            t.seed = s
+            t.save()
+            s += 1
         for t in wr:
             conf2.append(t)
+            t.seed = ss
+            t.save()
+            ss += 1
         return render(request, 'h_leagues/standings.html',
-                          {'o_central': div2, 'o_east': div1, 'o_midwest': div3,
-                           'o_west': div4, 'EC': conf1, 'WC': conf2, 'league': liga})
+                      {'o_central': div2, 'o_east': div1, 'o_midwest': div3,
+                       'o_west': div4, 'EC': conf1, 'WC': conf2, 'league': liga})
     else:
         # ---- WHL ----
         div1 = Team.objects.filter(league=liga, division='East', conference='Eastern').order_by('-pts', '-diff', '-gf', 'city')
@@ -112,17 +133,20 @@ def playoffs(request, liga):
         return render(request, 'h_leagues/postseason.html',
                       {'liga': liga, 'r1e': r1e, 'r1w': r1w, 'r2e': r2e, 'r2w': r2w, 'r3e': r3e, 'r3w': r3w, 'r4': r4})
 
-# noinspection PyArgumentList
-def schedule(request, liga):
-    not_played = Match.objects.filter(league=liga, resultado='').order_by('pk')
+def matches(league):
+    not_played = Match.objects.filter(league=league, resultado='').order_by('pk')
     played = []
-    for m in Match.objects.filter(league=liga, resultado='f'):
+    for m in Match.objects.filter(league=league, resultado='f'):
         played.append(m)
-    for m in Match.objects.filter(league=liga, resultado='ot'):
+    for m in Match.objects.filter(league=league, resultado='ot'):
         played.append(m)
-    for m in Match.objects.filter(league=liga, resultado='so'):
+    for m in Match.objects.filter(league=league, resultado='so'):
         played.append(m)
     played.sort()
+    return played, not_played
+
+def schedule(request, liga):
+    played, not_played = matches(liga)
     # po = [] # postseason
     return render(request, 'h_leagues/schedule.html', {'P': played, 'nP': not_played})
 
@@ -130,6 +154,7 @@ def simulation(request, match_id):
     partida = Match.objects.get(pk=match_id)
     home = Team.objects.filter(abr=partida.home)[0]
     away = Team.objects.filter(abr=partida.away)[0]
+    played, not_played = matches(partida.league)
     if not partida.resultado:
         h = random.randint(0, 5)
         a = random.randint(0, 5)
@@ -195,8 +220,9 @@ def simulation(request, match_id):
         home.save()
         away.save()
         partida.save()
-    win = Team.objects.get(abr=partida.winner)
-    return render(request, 'h_leagues/match.html', {'partida': partida, 'casa': home, 'fora': away, 'victory': win})
+    message = '%s %d @ %s %d' % (away.name, partida.a_score, home.name, partida.h_score)
+    return render(request, 'h_leagues/schedule.html',
+                  {'P': played, 'nP': not_played, 'msg': message, 'result': partida.get_resultado_display()})
 
 # from h_leagues.models import *
 # m = Match.objects.first

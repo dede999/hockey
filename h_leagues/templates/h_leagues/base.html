@@ -52,6 +52,10 @@
             <a class="col l4 waves-effect waves-light btn"
                style="background-color: red; color: black; font-weight: bolder" href="{% url 'leagues:postseason' 'WHL' %}"> Playoffs </a>
         </div>
+
+        {% block chips %}
+
+        {% endblock %}
     </div>
     <div class="col l9">
         {% block mainblock %}

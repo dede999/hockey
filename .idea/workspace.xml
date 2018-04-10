@@ -4,10 +4,6 @@
     <list default="true" id="86c3ad2a-562e-4700-bc86-f8eab42c51a5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h_leagues/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h_leagues/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,40 +20,30 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/h_leagues/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="1245">
               <caret line="95" column="127" selection-start-line="95" selection-start-column="127" selection-end-line="95" selection-end-column="127" />
               <folding>
                 <element signature="e#200#549#0" />
                 <element signature="e#582#806#0" />
-                <element signature="e#900#1718#0" />
-                <element signature="e#1751#3003#0" />
-                <element signature="e#6157#6570#0" />
-                <element signature="e#6197#6306#0" />
-                <element signature="e#6725#9050#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
+            <state relative-caret-position="123">
               <caret line="56" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schedule.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="schedule.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-              <folding>
-                <element signature="e#98#144#0#HTML" expanded="true" />
-                <element signature="e#189#235#0#HTML" expanded="true" />
-                <element signature="e#303#330#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -65,7 +51,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/h_leagues/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="-30">
               <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
             </state>
           </provider>
@@ -175,6 +161,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Int_CG" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
@@ -234,12 +221,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521350363048</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Made some changes on the Template">
+      <created>1522791013845</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1522791013845</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="-1" width="1372" height="748" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50073206" side_tool="true" weight="0.32866043" />
@@ -272,7 +265,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Improving model and schedule template. A little change was made on games fixtures" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improving model and schedule template. A little change was made on games fixtures" />
+    <MESSAGE value="Made some changes on the Template" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made some changes on the Template" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -333,45 +327,35 @@
     <entry file="file://$PROJECT_DIR$/h_leagues/fixtures/games.json" />
     <entry file="file://$PROJECT_DIR$/h_leagues/urls.py" />
     <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/standings.html" />
-    <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h_leagues/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/h_leagues/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="1245">
           <caret line="95" column="127" selection-start-line="95" selection-start-column="127" selection-end-line="95" selection-end-column="127" />
           <folding>
             <element signature="e#200#549#0" />
             <element signature="e#582#806#0" />
-            <element signature="e#900#1718#0" />
-            <element signature="e#1751#3003#0" />
-            <element signature="e#6157#6570#0" />
-            <element signature="e#6197#6306#0" />
-            <element signature="e#6725#9050#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-          <folding>
-            <element signature="e#98#144#0#HTML" expanded="true" />
-            <element signature="e#189#235#0#HTML" expanded="true" />
-            <element signature="e#303#330#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="285">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h_leagues/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
     </entry>

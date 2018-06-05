@@ -25,32 +25,18 @@
         <div class="row z-depth-4">
             <a class="col l12 waves-effect waves-light btn"
                style="background-color: lightcyan; color: blue; font-weight: bolder" href="{% url 'leagues:liga' 'QMJHL' %}"> QMJHL </a>
-            <a class="col l4 waves-effect waves-light btn"
-               style="background-color: lightcyan; color: blue; font-weight: bolder" href="{% url 'leagues:standings' 'QMJHL' %}"> Standings </a>
-            <a class="col l4 waves-effect waves-light btn"
-               style="background-color: lightcyan; color: blue; font-weight: bolder" href="{% url 'leagues:schedule' 'QMJHL' %}"> Schedule </a>
-            <a class="col l4 waves-effect waves-light btn"
-               style="background-color: lightcyan; color: blue; font-weight: bolder" href="{% url 'leagues:postseason' 'QMJHL' %}"> Playoffs </a>
         </div>
         <div class="row z-depth-4">
             <a class="col l12 waves-effect waves-light btn"
                style="background-color: dodgerblue; color: azure; font-weight: bolder" href="{% url 'leagues:liga' 'OHL' %}"> OHL </a>
-            <a class="col l4 waves-effect waves-light btn"
-               style="background-color: dodgerblue; color: azure; font-weight: bolder" href="{% url 'leagues:standings' 'OHL' %}"> Standings </a>
-            <a class="col l4 waves-effect waves-light btn"
-               style="background-color: dodgerblue; color: azure; font-weight: bolder" href="{% url 'leagues:schedule' 'OHL' %}"> Schedule </a>
-            <a class="col l4 waves-effect waves-light btn"
-               style="background-color: dodgerblue; color: azure; font-weight: bolder" href="{% url 'leagues:postseason' 'OHL' %}"> Playoffs </a>
         </div>
         <div class="row z-depth-4">
             <a class="col l12 waves-effect waves-light btn"
                style="background-color: red; color: black; font-weight: bolder" href="{% url 'leagues:liga' 'WHL' %}"> WHL </a>
-            <a class="col l4 waves-effect waves-light btn"
-               style="background-color: red; color: black; font-weight: bolder" href="{% url 'leagues:standings' 'WHL' %}"> Standings </a>
-            <a class="col l4 waves-effect waves-light btn"
-               style="background-color: red; color: black; font-weight: bolder" href="{% url 'leagues:schedule' 'WHL' %}"> Schedule </a>
-            <a class="col l4 waves-effect waves-light btn"
-               style="background-color: red; color: black; font-weight: bolder" href="{% url 'leagues:postseason' 'WHL' %}"> Playoffs </a>
+        </div>
+        <div class="row z-depth-4">
+            <a class="col l12 waves-effect waves-light btn"
+               style="background-color: gold; color: black; font-weight: bolder" href="{% url 'leagues:liga' 'MMC' %}"> Memorial Cup </a>
         </div>
 
         {% block chips %}
@@ -58,6 +44,24 @@
         {% endblock %}
     </div>
     <div class="col l9">
+        {% if l %}
+              <nav style="font-weight: bolder"
+                   class="{{ l.color }} {{ l.bg_color }}-text">
+                <div class="nav-wrapper">
+                  <a href="#" class="brand-logo right" style="font-size: 32px"> {{ l.get_name_display }} </a>
+                  <ul id="nav-mobile" class="left hide-on-med-and-down">
+                      <li><a href="{% url 'leagues:standings' l.name %}">Standings</a></li>
+                      <li><a href="">Matches </a></li>
+                      <li><a href="">Playoffs</a></li>
+                      {% if winner %}
+                          <li> C: {{ winner.first.champion }} </li>
+                      {% endif %}
+                  </ul>
+                </div>
+              </nav>
+        {% endif %}
+
+
         {% block mainblock %}
         
         {% endblock %}

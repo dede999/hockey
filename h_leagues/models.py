@@ -1,4 +1,5 @@
 from django.db import models
+import numpy as np
 
 '''
 You can change the leagues names here
@@ -7,6 +8,7 @@ LEAGUES = (
     ('OHL', 'Ontario Hockey League'),
     ('QMJHL', 'Quebec Major Junior Hockey League'),
     ('WHL', 'Western Hockey League'),
+    ('MMC', 'Memorial Cup')
 )
 
 PO_MARKS = (
@@ -30,10 +32,31 @@ class League(models.Model): #1
     color = models.CharField(max_length=10, default='')
     bg_color = models.CharField(max_length=10, default='')
 
+    def __str__(self):
+        return self.name.upper()
+
+    def get_team(self):
+        resp = []
+        resp1 = []
+        [resp1.append(conf.get_team()) for conf in self.conference_set.all()]
+        for line in resp1:
+            [resp.append(t) for t in line]
+        return resp
+
+    def regular_season(self, season):
+        for t in self.get_team():
+            rand = int(np.random.normal(500, 100))
+            RS_clubs(
+                t_abr=t, s_year=season, l_name=self,
+                off_power=rand, def_power=1000-rand).save()
+
 class Season(models.Model): #2
     start = models.IntegerField()
     final = models.IntegerField(primary_key=True)
     is_over = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "(%d - %d)" % (self.start, self.final)
 
 class Conference(models.Model): #3
     league = models.ForeignKey(League, on_delete=models.CASCADE)
@@ -42,6 +65,17 @@ class Conference(models.Model): #3
     class Meta:
         unique_together = (('league', 'region'))
 
+    def __str__(self):
+        return "%s %s Conference" % (self.league, self.region)
+
+    def get_team(self):
+        resp = []
+        resp1 = []
+        [resp1.append(div.get_teams()) for div in self.division_set.all()]
+        for line in resp1:
+            [resp.append(t) for t in line]
+        return resp
+
 class Division(models.Model): #4
     conf = models.ForeignKey(Conference, on_delete=models.CASCADE)
     region = models.CharField(max_length=30)
@@ -49,12 +83,22 @@ class Division(models.Model): #4
     class Meta:
         unique_together = (('conf', 'region'))
 
+    def __str__(self):
+        return "%s %s Division" % (self.conf.league, self.region)
+
+    def get_teams(self):
+        resp = []
+        [resp.append(t) for t in self.team_set.all()]
+        return resp
+
 class Team(models.Model): #5
     city = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     abr = models.CharField(max_length=5, primary_key=True)
     division = models.ForeignKey(Division, on_delete=models.CASCADE)
     bg_color = models.CharField(max_length=10, default='')
+    l_championship = models.IntegerField(default=0)
+    mmc_championship = models.IntegerField(default=0)
 
     def __str__(self):
         return "%s %s" % (self.city, self.name)
@@ -84,9 +128,6 @@ class RS_clubs(models.Model): #6
         unique_together=(('t_abr', 's_year'), )
 
     # this class and subsequent methods can be changed according to the sport to be simulated
-    def __init__(self, team):
-        self.eq = team
-        self.save()
 
     def __lt__(self, other):
         if self.pts != other.pts:
@@ -95,8 +136,11 @@ class RS_clubs(models.Model): #6
             return self.diff > other.diff
         elif self.gf != other.gf:
             return self.gf > other.gf
-        elif self.eq.city != other.eq.city:
-            return  self.eq.city < other.eq.city
+        elif self.t_abr.city != other.t_abr.city:
+            return  self.t_abr.city < other.t_abr.city
+
+    def __str__(self):
+        return "%s %s" % (self.t_abr, self.s_year)
 
     def seq(self, result):
         r = (self.streak).split(" ")
@@ -118,36 +162,35 @@ class RS_clubs(models.Model): #6
         else:
             return '%05.3f' % (self.pts/(jogos*2))
 
-
-class Series(models.Model):
-    league = models.ForeignKey(League, on_delete=models.CASCADE)
-    season = models.ForeignKey(Season, on_delete=models.CASCADE)
-    phase = models.IntegerField()
-    identifier = models.CharField(max_length=2, default='')
-    conf = models.IntegerField(default=0)
-    title = models.CharField(max_length=20, default='')
-    class Meta:
-        unique_together= (('league', 'season', 'phase', 'identifier'),)
-
 class PostSeason(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     season = models.ForeignKey(Season, on_delete=models.CASCADE)
     wins = models.IntegerField(default=0)
     loss = models.IntegerField(default=0)
     end_point = models.CharField(default='', max_length=20)
-    participates = models.ManyToManyField(Series, through='Participation')
+    participates = models.ManyToManyField('self', through='Series', symmetrical=False)
     class Meta:
         unique_together= (('team', 'season'),)
 
-class Participation(models.Model):
-    team = models.ForeignKey(PostSeason, on_delete=models.CASCADE)
-    series = models.ForeignKey(Series, on_delete=models.CASCADE)
-    wins = models.IntegerField(default=0)
-    loss = models.IntegerField(default=0)
-    home_adv = models.IntegerField(default=0)
-    class Meta:
-        unique_together= (('team', 'series'),)
+    def __str__(self):
+        return "%s  (%s - %s)" % (self.team, self.wins, self.loss)
 
+class Series(models.Model):
+    league = models.ForeignKey(League, on_delete=models.CASCADE)
+    season = models.ForeignKey(Season, on_delete=models.CASCADE)
+    phase = models.IntegerField()
+    high = models.ForeignKey(PostSeason, on_delete=models.CASCADE, related_name='higher')
+    h_wins = models.IntegerField(default=1)
+    low = models.ForeignKey(PostSeason, on_delete=models.CASCADE, related_name='lower')
+    l_wins = models.IntegerField(default=1)
+    conf = models.IntegerField(default=0)
+    title = models.CharField(max_length=20, default='')
+    class Meta:
+        unique_together= (('league', 'season', 'phase', 'high', 'low'),)
+
+    def __str__(self):
+        return "#%s%s Rd%d %d" % (self.high,self.low,self.phase,
+                self.season.final)
 
 class Match(models.Model):
     away = models.ForeignKey(RS_clubs, on_delete=models.CASCADE, related_name='guest')
@@ -165,7 +208,7 @@ class Match(models.Model):
         return self.pk > other.pk
 
 class PSMatch(models.Model):
-    season = models.ForeignKey(Series, on_delete=models.CASCADE)
+    series = models.ForeignKey(Series, on_delete=models.CASCADE)
     game = models.IntegerField(default=1)
     h_score = models.IntegerField(default=0)
     a_score = models.IntegerField(default=0)
@@ -178,6 +221,16 @@ class Winners(models.Model):
     season = models.ForeignKey(Season, on_delete=models.CASCADE)
     div_champ = models.BooleanField(default=False)
     division = models.CharField(max_length=10, default='')
+
+    def champs(self):
+        if self.league.name == 'MMC':
+            self.champion.mmc_championship += 1
+            if self.champion.save():
+                print('OK')
+        else:
+            self.champion.l_championship += 1
+            if self.champion.save():
+                print('OK')
 
 # Create your models here.
 # from h_leagues.models import *

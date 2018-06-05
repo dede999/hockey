@@ -6,104 +6,33 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
-    tt = Team.objects.order_by('-pts', '-diff', '-gf', 'city')[:15]
-    w = Match.objects.filter(league='WHL').order_by('pk')[:4]
-    o = Match.objects.filter(league='OHL').order_by('pk')[:4]
-    q = Match.objects.filter(league='QMJHL').order_by('pk')[:4]
-    return render(request, 'h_leagues/index.html', {'teams': tt, 'whl': w, 'qmjhl': q, 'ohl': o})
+    s = Season.objects.all().last()
+    qw = Winners.objects.get(season=s.final-1, league='QMJHL')
+    ow = Winners.objects.get(season=s.final-1, league='OHL')
+    ww = Winners.objects.get(season=s.final-1, league='WHL')
+    title = Winners.objects.get(season=s.final-1, league='MMC')
+    tt = Team.objects.order_by(
+        '-mmc_championship', '-l_championship', 'city')[:5]
+    # tt = Team.objects.order_by('-pts', '-diff', '-gf', 'city')[:15]
+    return render(request, 'h_leagues/index.html',
+                  {'teams': tt, 'past': s, 'ohl': ow,
+                   'qhl': qw, 'whl': ww, 'mmc': title})
 
 def league(request, liga):
-    tt = Team.objects.filter(league=liga).order_by('-pts', '-diff', '-gf', 'city')
-    games = Match.objects.filter(league=liga).order_by('pk')[:8]
-    return render(request, 'h_leagues/leagues.html', {'teams': tt, 'gg': games})
+    s = Season.objects.all().last()
+    league = League.objects.get(name=liga)
+    champ = Winners.objects.filter(league=liga, season=s.final-1)
+    tt = RS_clubs.objects.filter(l_name=liga).order_by('-pts', '-diff', '-gf', 't_abr__city')
+    games = Match.objects.filter(league=liga).order_by('pk')[:6]
+    return render(request, 'h_leagues/leagues.html',
+                  {'teams': tt, 'gg': games,
+                   'winner': champ, 'l': league})
 
 def standings(request, liga):
-    conf1 = []
-    conf2 = []
-    s = 1
-    ss = 1
-    if liga == 'QMJHL':
-        div1 = Team.objects.filter(league=liga, division='West').order_by('-pts', '-diff', '-gf', 'city')
-        div2 = Team.objects.filter(league=liga, division='East').order_by('-pts', '-diff', '-gf', 'city')
-        div3 = Team.objects.filter(league=liga, division='Maritimes').order_by('-pts', '-diff', '-gf', 'city')
-        lideres = [div1[0], div2[0], div3[0]]
-        rest = []
-        for i in range(1,6):
-            rest.append(div1[i])
-            rest.append(div2[i])
-            rest.append(div3[i])
-        lideres.sort()
-        rest.sort()
-        for t in lideres:
-            conf1.append(t)
-            t.seed = s
-            t.save()
-            s += 1
-        for t in rest:
-            conf1.append(t)
-            t.seed = s
-            t.save()
-            s += 1
-
-        return render(request, 'h_leagues/standings.html',
-                      {'q_west': div1, 'q_east': div2, 'q_marit': div3, 'total': conf1, 'league': liga})
-    elif liga == 'OHL':
-        div1 = Team.objects.filter(league=liga, division='East', conference='Eastern').order_by('-pts', '-diff', '-gf', 'city')
-        div2 = Team.objects.filter(league=liga, division='Central', conference='Eastern').order_by('-pts', '-diff', '-gf', 'city')
-        div3 = Team.objects.filter(league=liga, division='Midwest', conference='Western').order_by('-pts', '-diff', '-gf', 'city')
-        div4 = Team.objects.filter(league=liga, division='West', conference='Western').order_by('-pts', '-diff', '-gf', 'city')
-        el = [div1[0], div2[0]]
-        wl = [div3[0], div4[0]]
-        er = []
-        wr = []
-        for i in range(1,5):
-            er.append(div1[i])
-            er.append(div2[i])
-            wr.append(div3[i])
-            wr.append(div4[i])
-        el.sort()
-        er.sort()
-        wl.sort()
-        wr.sort()
-        for t in el:
-            conf1.append(t)
-            t.seed = s
-            t.save()
-            s += 1
-        for t in wl:
-            conf2.append(t)
-            t.seed = ss
-            t.save()
-            ss += 1
-        for t in er:
-            conf1.append(t)
-            t.seed = s
-            t.save()
-            s += 1
-        for t in wr:
-            conf2.append(t)
-            t.seed = ss
-            t.save()
-            ss += 1
-        return render(request, 'h_leagues/standings.html',
-                      {'o_central': div2, 'o_east': div1, 'o_midwest': div3,
-                       'o_west': div4, 'EC': conf1, 'WC': conf2, 'league': liga})
-    else:
-        # ---- WHL ----
-        div1 = Team.objects.filter(league=liga, division='East', conference='Eastern').order_by('-pts', '-diff', '-gf', 'city')
-        div2 = Team.objects.filter(league=liga, division='Central', conference='Eastern').order_by('-pts', '-diff', '-gf', 'city')
-        div3 = Team.objects.filter(league=liga, division='B.C.', conference='Western').order_by('-pts', '-diff', '-gf', 'city')
-        div4 = Team.objects.filter(league=liga, division='U.S.', conference='Western').order_by('-pts', '-diff', '-gf', 'city')
-        for wc in range(3,6):
-            conf1.append(div1[wc])
-            conf1.append(div2[wc])
-        for wc in range(3,5):
-            conf2.append(div3[wc])
-            conf2.append(div4[wc])
-        conf1.sort()
-        conf2.sort()
-        return render(request, 'h_leagues/standings.html', {'w_central': div2[:3], 'w_east': div1[:3], 'bc': div3[:3],
-                       'us': div4[:3], 'e_wc': conf1, 'w_wc': conf2, 'league': liga})
+    # temp = Season.objects.last()
+    l = League.objects.get(name=liga)
+    return render(request, 'h_leagues/standings.html',
+                  {'l': l})
 
 def playoffs(request, liga):
     if liga == 'QMJHL':

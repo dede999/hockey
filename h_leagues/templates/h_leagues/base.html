@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="base.js"></script>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -22,27 +23,29 @@
 <div class="row" style="padding-top: 1em">
     <div class="col l3">
         <!-- Painel -->
-        <div class="row z-depth-4">
-            <a class="col l12 waves-effect waves-light btn"
-               style="background-color: lightcyan; color: blue; font-weight: bolder" href="{% url 'leagues:liga' 'QMJHL' %}"> QMJHL </a>
-        </div>
-        <div class="row z-depth-4">
-            <a class="col l12 waves-effect waves-light btn"
-               style="background-color: dodgerblue; color: azure; font-weight: bolder" href="{% url 'leagues:liga' 'OHL' %}"> OHL </a>
-        </div>
-        <div class="row z-depth-4">
-            <a class="col l12 waves-effect waves-light btn"
-               style="background-color: red; color: black; font-weight: bolder" href="{% url 'leagues:liga' 'WHL' %}"> WHL </a>
-        </div>
-        <div class="row z-depth-4">
-            <a class="col l12 waves-effect waves-light btn"
-               style="background-color: gold; color: black; font-weight: bolder" href="{% url 'leagues:liga' 'MMC' %}"> Memorial Cup </a>
-        </div>
+        {% if ll %}
+            {% for league in ll %}
+              <ul class="collection with-header" style="font-weight: bolder">
+                <li class="collection-header {{ league.bg_color }}-text {{ league.color }}">
+                    <h5>{{ league.get_name_display }}</h5></li>
+                <li class="collection-item {{ league.color }}-text {{ league.bg_color }} lighten-2">
+                    <div>Standings <a href="{% url 'leagues:standings' league.name %}" class="secondary-content"><i class="material-icons {{ league.color }}-text">send</i></a></div></li>
+                <li class="collection-item {{ league.color }}-text {{ league.bg_color }} lighten-2">
+                    <div>Schedule<a href="{% url 'leagues:schedule' league.name %}" class="secondary-content"><i class="material-icons {{ league.color }}-text">send</i></a></div></li>
+                <li class="collection-item {{ league.color }}-text {{ league.bg_color }} lighten-2">
+                    <div>Playoffs<a href="{% url 'leagues:postseason' league.name %}" class="secondary-content"><i class="material-icons {{ league.color }}-text">send</i></a></div></li>
+                <li class="collection-item {{ league.color }}-text {{ league.bg_color }} lighten-2">
+                    <div>Past Winners<a href="{% url 'leagues:liga' league.name %}" class="secondary-content"><i class="material-icons {{ league.color }}-text">send</i></a></div></li>
+              </ul>
+            {% endfor %}
+                    
+        {% endif %}
 
         {% block chips %}
 
         {% endblock %}
     </div>
+
     <div class="col l9">
         {% if l %}
               <nav style="font-weight: bolder"

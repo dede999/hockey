@@ -1,49 +1,126 @@
 {% extends 'h_leagues/base.html' %}
 
 {% block mainblock %}
-    {% for conferencia in l.conference_set.all %}
-        <h3 style="border-bottom: 2px solid {{ l.bg_color }}"> {{ conferencia.region }} Conference </h3>
-        {% for division in conferencia.division_set.all %}
-            <table class="striped z-depth-4">
-                <thead>
-                    <tr>
-                        <th> # </th>
-                        <th> {{ division.region }} Division </th>
-                        <th> Pts </th>
-                        <th> G </th>
-                        <th> W </th>
-                        <th> L </th>
-                        <th> OTL </th>
-                        <th> SOL </th>
-                        <th> GF </th>
-                        <th> GA </th>
-                        <th> DIFF </th>
-                        <th> PCT </th>
-                        <th> Streak </th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for qw in division.team_set.all %}
-                    <tr>
-                        <th> {{ forloop.counter }} </th>
-                        <th> {{ qw.city }} {{ qw.name }} </th>
-                        <th> {{ qw.rs_clubs_set.last.pts }} </th>
-                        <th> {{ qw.rs_clubs_set.last.games }}</th>
-                        <th> {{ qw.rs_clubs_set.last.wins }}</th>
-                        <th> {{ qw.rs_clubs_set.last.loss }}</th>
-                        <th> {{ qw.rs_clubs_set.last.otl }} </th>
-                        <th> {{ qw.rs_clubs_set.last.sol }}</th>
-                        <th> {{ qw.rs_clubs_set.last.gf }} </th>
-                        <th> {{ qw.rs_clubs_set.last.ga }} </th>
-                        <th> {{ qw.rs_clubs_set.last.diff }} </th>
-                        <th> {{ qw.rs_clubs_set.last.pct }} </th>
-                        <th> {{ qw.rs_clubs_set.last.streak }}</th>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        {% endfor %}
 
-    {% endfor %}
+      <div class="row">
+        <div class="col s12 m9 l10">
+            {% for conferencia in l.conference_set.all %}
+                <h3 style="border-bottom: 1em solid {{ l.bg_color }}"> {{ conferencia.region }} Conference </h3>
+                {% for division in conferencia.division_set.all %}
+                    <div id="{{ division.region }}division" class="section scrollspy">
+                        <table class="striped z-depth-4">
+                            <thead>
+                                <tr>
+                                    <th> # </th>
+                                    <th> {{ division.region }} Division </th>
+                                    <th> Pts </th>
+                                    <th> G </th>
+                                    <th> W </th>
+                                    <th> L </th>
+                                    <th> OTL </th>
+                                    <th> SOL </th>
+                                    <th> GF </th>
+                                    <th> GA </th>
+                                    <th> DIFF </th>
+                                    <th> PCT </th>
+                                    <th> Streak </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for qw in division.div_standings %}
+                                {% if forloop.counter <= division.tops %}
+                                    <tr class="{{ l.color }} {{ l.bg_color }}-text">
+                                {% else %}
+                                    <tr>
+                                {% endif %}
+                                    <th> {{ forloop.counter }} </th>
+                                    <th> {{ qw.city }} {{ qw.name }} </th>
+                                    <th> {{ qw.rs_clubs_set.last.pts }} </th>
+                                    <th> {{ qw.rs_clubs_set.last.games }}</th>
+                                    <th> {{ qw.rs_clubs_set.last.wins }}</th>
+                                    <th> {{ qw.rs_clubs_set.last.loss }}</th>
+                                    <th> {{ qw.rs_clubs_set.last.otl }} </th>
+                                    <th> {{ qw.rs_clubs_set.last.sol }}</th>
+                                    <th> {{ qw.rs_clubs_set.last.gf }} </th>
+                                    <th> {{ qw.rs_clubs_set.last.ga }} </th>
+                                    <th> {{ qw.rs_clubs_set.last.diff }} </th>
+                                    <th> {{ qw.rs_clubs_set.last.pct }} </th>
+                                    <th> {{ qw.rs_clubs_set.last.streak }}</th>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endfor %}
+
+            {% endfor %}
+
+          <div id="seeds" class="section scrollspy">
+            {% for conference in l.conference_set.all %}
+                <table class="striped z-depth-4">
+                    <thead>
+                        <tr>
+                            <th> # </th>
+                            <th> {{ conference.region }} Conference </th>
+                            <th> Pts </th>
+                            <th> G </th>
+                            <th> W </th>
+                            <th> L </th>
+                            <th> OTL </th>
+                            <th> SOL </th>
+                            <th> GF </th>
+                            <th> GA </th>
+                            <th> DIFF </th>
+                            <th> PCT </th>
+                            <th> Streak </th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-weight: bold">
+                    {% for qw in conference.conf_standings %}
+                        {% if forloop.counter <= tops %}
+                            <tr class="{{ l.color }} {{ l.bg_color }}-text">
+                                <td> {{ forloop.counter }} </td>
+                        {% elif forloop.counter > poff %}
+                            <tr>
+                                <td></td>
+                        {% else %}
+                            <tr  class="{{ l.bg_color }} {{ l.color }}-text"
+                                style="border-bottom: {{ l.bg_color }}">
+                                <td> {{ forloop.counter }} </td>
+                        {% endif %}
+                            <td> {{ qw.city }} {{ qw.name }} </td>
+                            <td> {{ qw.rs_clubs_set.last.pts }} </td>
+                            <td> {{ qw.rs_clubs_set.last.games }}</td>
+                            <td> {{ qw.rs_clubs_set.last.wins }}</td>
+                            <td> {{ qw.rs_clubs_set.last.loss }}</td>
+                            <td> {{ qw.rs_clubs_set.last.otl }} </td>
+                            <td> {{ qw.rs_clubs_set.last.sol }}</td>
+                            <td> {{ qw.rs_clubs_set.last.gf }} </td>
+                            <td> {{ qw.rs_clubs_set.last.ga }} </td>
+                            <td> {{ qw.rs_clubs_set.last.diff }} </td>
+                            <td> {{ qw.rs_clubs_set.last.pct }} </td>
+                            <td> {{ qw.rs_clubs_set.last.streak }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endfor %}
+
+          </div>
+        </div>
+        <div class="col hide-on-small-only m3 l2">
+          <ul class="section table-of-contents">
+            {% for conference in l.conference_set.all %}
+                {% for division in conference.division_set.all %}
+                    <li><a href="#{{ division.region }}division"> {{ division }} </a></li>
+                {% endfor %}
+
+            {% endfor %}
+
+            <li><a href="#seeds">Conference Standings</a></li>
+          </ul>
+        </div>
+      </div>
+
 
 {% endblock %}

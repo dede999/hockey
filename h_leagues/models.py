@@ -12,9 +12,10 @@ LEAGUES = (
 )
 
 PO_MARKS = (
-    (1, 'x - '), # Clinched Playoff Spot
-    (2, 'y - '), # Division Champion
-    (3, 'z - '), # Conference Champion
+    (1, 'w - '), # Clinched WildCard Spot
+    (2, 'x - '), # Clinched Playoff Spot
+    (3, 'y - '), # Division Champion
+    (4, 'z - '), # Conference Champion
     (0, '')
 )
 
@@ -50,6 +51,7 @@ class League(models.Model): #1
                 t_abr=t, s_year=season, l_name=self,
                 off_power=rand, def_power=1000-rand).save()
 
+
 class Season(models.Model): #2
     start = models.IntegerField()
     final = models.IntegerField(primary_key=True)
@@ -76,6 +78,22 @@ class Conference(models.Model): #3
             [resp.append(t) for t in line]
         return resp
 
+    def conf_standings(self):
+        tops = []
+        wild_c = []
+        std = []
+        for division in self.division_set.all():
+            div = division.div_standings()
+            for k in range(division.tops):
+                tops.append(div[k])
+            for i in range(division.tops,len(div)):
+                wild_c.append(div[i])
+        tops.sort()
+        wild_c.sort()
+        [std.append(i) for i in tops]
+        [std.append(k) for k in wild_c]
+        return  std
+
 class Division(models.Model): #4
     conf = models.ForeignKey(Conference, on_delete=models.CASCADE)
     region = models.CharField(max_length=30)
@@ -91,6 +109,24 @@ class Division(models.Model): #4
         [resp.append(t) for t in self.team_set.all()]
         return resp
 
+    def sorted(self):
+        vec = []
+        [vec.append(rs.rs_clubs_set.last()) for rs in self.get_teams()]
+        vec.sort()
+        rank = 1
+        for rs_clubs in vec:
+            rs_clubs.div_placement = rank
+            rank += 1
+            rs_clubs.save()
+        return vec
+
+    def div_standings(self):
+        vec = []
+        [vec.append(team) for team in self.get_teams()]
+        vec.sort()
+        return vec
+
+
 class Team(models.Model): #5
     city = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
@@ -102,6 +138,11 @@ class Team(models.Model): #5
 
     def __str__(self):
         return "%s %s" % (self.city, self.name)
+
+    def __lt__(self, other):
+        this = self.rs_clubs_set.last()
+        that =  other.rs_clubs_set.last()
+        return this.div_placement < that.div_placement
 
 class RS_clubs(models.Model): #6
     t_abr = models.ForeignKey(Team, on_delete=models.CASCADE)

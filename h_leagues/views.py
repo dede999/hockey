@@ -4,6 +4,23 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 
+#helpers
+def get_all():
+    return League.objects.all()
+
+def matches(league):
+    not_played = Match.objects.filter(league=league, resultado='').order_by('pk')
+    played = []
+    for m in Match.objects.filter(league=league, resultado='f'):
+        played.append(m)
+    for m in Match.objects.filter(league=league, resultado='ot'):
+        played.append(m)
+    for m in Match.objects.filter(league=league, resultado='so'):
+        played.append(m)
+    played.sort()
+    return played, not_played
+
+
 # Create your views here.
 def index(request):
     s = Season.objects.all().last()
@@ -13,10 +30,11 @@ def index(request):
     title = Winners.objects.get(season=s.final-1, league='MMC')
     tt = Team.objects.order_by(
         '-mmc_championship', '-l_championship', 'city')[:5]
+    ll = get_all()
     # tt = Team.objects.order_by('-pts', '-diff', '-gf', 'city')[:15]
     return render(request, 'h_leagues/index.html',
                   {'teams': tt, 'past': s, 'ohl': ow,
-                   'qhl': qw, 'whl': ww, 'mmc': title})
+                   'qhl': qw, 'whl': ww, 'mmc': title, 'll': ll})
 
 def league(request, liga):
     s = Season.objects.all().last()
@@ -24,15 +42,19 @@ def league(request, liga):
     champ = Winners.objects.filter(league=liga, season=s.final-1)
     tt = RS_clubs.objects.filter(l_name=liga).order_by('-pts', '-diff', '-gf', 't_abr__city')
     games = Match.objects.filter(league=liga).order_by('pk')[:6]
+    ll = get_all()
     return render(request, 'h_leagues/leagues.html',
                   {'teams': tt, 'gg': games,
-                   'winner': champ, 'l': league})
+                   'winner': champ, 'l': league, 'll': ll})
 
 def standings(request, liga):
     # temp = Season.objects.last()
     l = League.objects.get(name=liga)
+    tps = l.conference_set.first().division_set.count() * l.conference_set.first().division_set.first().tops
+    total = tps + l.conference_set.first().wild_card
+    ll = get_all()
     return render(request, 'h_leagues/standings.html',
-                  {'l': l})
+                  {'l': l, 'tops': tps, 'poff': total, 'll': ll})
 
 def playoffs(request, liga):
     if liga == 'QMJHL':
@@ -62,17 +84,6 @@ def playoffs(request, liga):
         return render(request, 'h_leagues/postseason.html',
                       {'liga': liga, 'r1e': r1e, 'r1w': r1w, 'r2e': r2e, 'r2w': r2w, 'r3e': r3e, 'r3w': r3w, 'r4': r4})
 
-def matches(league):
-    not_played = Match.objects.filter(league=league, resultado='').order_by('pk')
-    played = []
-    for m in Match.objects.filter(league=league, resultado='f'):
-        played.append(m)
-    for m in Match.objects.filter(league=league, resultado='ot'):
-        played.append(m)
-    for m in Match.objects.filter(league=league, resultado='so'):
-        played.append(m)
-    played.sort()
-    return played, not_played
 
 def schedule(request, liga):
     played, not_played = matches(liga)

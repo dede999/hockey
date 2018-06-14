@@ -46,11 +46,17 @@ class League(models.Model): #1
 
     def regular_season(self, season):
         for t in self.get_team():
-            rand = int(np.random.normal(500, 100))
+            rand_off = int(np.random.normal(500, 100))
+            rand_def = int(np.random.normal(500, 100))
             RS_clubs(
                 t_abr=t, s_year=season, l_name=self,
-                off_power=rand, def_power=1000-rand).save()
+                off_power=rand_off, def_power=rand_def).save()
 
+    def completeness(self):
+        total = self.match_set.count()
+        played = total - self.match_set.filter(result='')
+        # comp = "%5.2f" % played/total
+        return "%d/%d matches (%5.2f %)" % (played, total, (played/total))
 
 class Season(models.Model): #2
     start = models.IntegerField()
@@ -125,7 +131,6 @@ class Division(models.Model): #4
         [vec.append(team) for team in self.get_teams()]
         vec.sort()
         return vec
-
 
 class Team(models.Model): #5
     city = models.CharField(max_length=100)
@@ -246,7 +251,7 @@ class Match(models.Model):
     # def __init__(self):
 
     def __lt__(self, other):
-        return self.pk > other.pk
+        return self.id > other.id
 
 class PSMatch(models.Model):
     series = models.ForeignKey(Series, on_delete=models.CASCADE)
@@ -262,6 +267,7 @@ class Winners(models.Model):
     season = models.ForeignKey(Season, on_delete=models.CASCADE)
     div_champ = models.BooleanField(default=False)
     division = models.CharField(max_length=10, default='')
+    host = models.CharField(max_length=20, default='')
 
     def champs(self):
         if self.league.name == 'MMC':

@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86c3ad2a-562e-4700-bc86-f8eab42c51a5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/h_leagues/templates/h_leagues/base.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h_leagues/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h_leagues/templates/h_leagues/standings.html" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/templates/h_leagues/standings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h_leagues/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.5/site-packages/numpy-1.14.3.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.5/site-packages/numpy-1.14.3.dist-info/RECORD" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/hockey$views.coverage" NAME="views Coverage Results" MODIFIED="1528403809721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/h_leagues" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -65,47 +65,58 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/h_leagues/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="52" selection-start-line="52" selection-end-line="52" />
+                <state relative-caret-position="735">
+                  <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
+                    <element signature="e#49#94#1" />
+                    <element signature="e#111#262#0" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/leagues.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="225">
+                    <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="28" column="72" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="72" />
+                <state relative-caret-position="225">
+                  <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
                   <folding>
-                    <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="e#873#892#0#HTML" expanded="true" />
+                    <element signature="e#1054#1078#0#HTML" expanded="true" />
+                    <element signature="e#1865#1891#0#HTML" expanded="true" />
+                    <element signature="e#2181#2207#0#HTML" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/standings.html">
+            <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4b39931-e046-44b4-a62c-89520677cb1b/console_2.sql">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
-                  <folding>
-                    <element signature="e#203#252#0#HTML" expanded="true" />
-                    <element signature="e#3847#3872#0#HTML" expanded="true" />
-                    <element signature="e#4415#4444#0#HTML" expanded="true" />
-                  </folding>
+                <state relative-caret-position="90">
+                  <caret line="6" selection-start-line="6" selection-end-line="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="450">
+                  <caret line="30" column="42" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="42" />
                 </state>
               </provider>
             </entry>
@@ -114,35 +125,17 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/h_leagues/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+                <state relative-caret-position="336">
+                  <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
                   <folding>
+                    <element signature="e#0#21#0" expanded="true" />
                     <element signature="e#178#205#0" />
-                    <element signature="e#232#645#0" />
-                    <marker date="1528296123556" expanded="true" signature="1870:1875" ph="..." />
-                    <marker date="1528296123556" expanded="true" signature="1870:2247" ph="..." />
+                    <marker date="1528432361751" expanded="true" signature="1867:1872" ph="..." />
+                    <marker date="1528432361751" expanded="true" signature="1867:2244" ph="..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4b39931-e046-44b4-a62c-89520677cb1b/console_1.sql">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/base.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" selection-start-line="7" selection-end-line="7" />
                 </state>
               </provider>
             </entry>
@@ -193,18 +186,21 @@
         <option value="$PROJECT_DIR$/h_leagues/fixtures/games.json" />
         <option value="$PROJECT_DIR$/h_leagues/urls.py" />
         <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/match.html" />
-        <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html" />
         <option value="$PROJECT_DIR$/h_leagues/admin.py" />
         <option value="$PROJECT_DIR$/h_leagues/fixtures/data.json" />
         <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/index.html" />
         <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/leagues.html" />
         <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/standings.html" />
-        <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/base.js" />
-        <option value="$PROJECT_DIR$/h_leagues/models.py" />
-        <option value="$PROJECT_DIR$/h_leagues/views.py" />
         <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f4b39931-e046-44b4-a62c-89520677cb1b/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f4b39931-e046-44b4-a62c-89520677cb1b/console_1.sql" />
+        <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/base.js" />
+        <option value="$PROJECT_DIR$/h_leagues/fixtures/match.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f4b39931-e046-44b4-a62c-89520677cb1b/console_2.sql" />
+        <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html" />
+        <option value="$PROJECT_DIR$/h_leagues/views.py" />
+        <option value="$PROJECT_DIR$/h_leagues/models.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -285,7 +281,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.views">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="hockey" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -300,6 +296,46 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="match" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="hockey" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/h_leagues/fixtures" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/h_leagues/fixtures/match.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="hockey" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/h_leagues" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/h_leagues/views.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -330,6 +366,17 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django server.hockey" />
+      <item itemvalue="Python.match" />
+      <item itemvalue="Python.views" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.views" />
+        <item itemvalue="Python.match" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -384,29 +431,29 @@
     <frame x="-3" y="-1" width="1372" height="748" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25681818" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.26060605" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Database Console" visible="true" weight="0.329582" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32866043" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3279743" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39937598" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3279743" />
-      <window_info anchor="bottom" id="Python Console" order="9" weight="0.3279743" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49926794" weight="0.3258427" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50073206" side_tool="true" weight="0.32866043" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.329582" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3279743" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.3279743" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39871383" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3279743" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.3279743" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49926794" weight="0.31993568" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50073206" side_tool="true" weight="0.32866043" />
+      <window_info anchor="bottom" id="Database Changes" order="13" weight="0.329582" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.3287879" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.32954547" />
-      <window_info anchor="right" x="0" y="0" width="293" height="548" id="Documentation" order="5" side_tool="true" weight="0.32954547" />
+      <window_info anchor="right" id="Database" order="4" sideWeight="0.49760765" weight="0.32954547" />
+      <window_info anchor="right" x="0" y="0" width="293" height="548" id="Documentation" order="5" sideWeight="0.50239235" side_tool="true" weight="0.32954547" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,23 +506,9 @@
     <entry file="file://$PROJECT_DIR$/h_leagues/fixtures/out1" />
     <entry file="file://$PROJECT_DIR$/h_leagues/fixtures/out" />
     <entry file="file://$PROJECT_DIR$/hockey/urls.py" />
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/django/db/models/query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="388" column="9" lean-forward="true" selection-start-line="388" selection-start-column="9" selection-end-line="388" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/h_leagues/fixtures/po.json" />
     <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/match.html" />
     <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/postseason.html" />
-    <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hockey/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-270" />
@@ -514,22 +547,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/leagues.html">
+    <entry file="file://$PROJECT_DIR$/h_leagues/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://f4b39931-e046-44b4-a62c-89520677cb1b/schema/main/table/h_leagues_winners" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4b39931-e046-44b4-a62c-89520677cb1b/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://f4b39931-e046-44b4-a62c-89520677cb1b/schema/main/table/h_leagues_rs_clubs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4b39931-e046-44b4-a62c-89520677cb1b/console_1.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/standings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
-          <folding>
-            <element signature="e#203#252#0#HTML" expanded="true" />
-            <element signature="e#3847#3872#0#HTML" expanded="true" />
-            <element signature="e#4415#4444#0#HTML" expanded="true" />
-          </folding>
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -540,64 +569,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/leagues.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h_leagues/fixtures/match.py" />
+    <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/standings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f4b39931-e046-44b4-a62c-89520677cb1b/schema/main/table/h_leagues_match" />
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/django/db/models/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="830" column="8" selection-start-line="830" selection-start-column="8" selection-end-line="830" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/h_leagues/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="735">
+          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#49#94#1" />
+            <element signature="e#111#262#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/h_leagues/urls.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <folding>
+            <element signature="e#873#892#0#HTML" expanded="true" />
+            <element signature="e#1054#1078#0#HTML" expanded="true" />
+            <element signature="e#1865#1891#0#HTML" expanded="true" />
+            <element signature="e#2181#2207#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4b39931-e046-44b4-a62c-89520677cb1b/console_2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="28" column="72" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="72" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f4b39931-e046-44b4-a62c-89520677cb1b/schema/main/table/h_leagues_winners">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4b39931-e046-44b4-a62c-89520677cb1b/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://f4b39931-e046-44b4-a62c-89520677cb1b/schema/main/table/h_leagues_rs_clubs">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+        <state relative-caret-position="450">
+          <caret line="30" column="42" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/h_leagues/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+        <state relative-caret-position="336">
+          <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
           <folding>
+            <element signature="e#0#21#0" expanded="true" />
             <element signature="e#178#205#0" />
-            <element signature="e#232#645#0" />
-            <marker date="1528296123556" expanded="true" signature="1870:1875" ph="..." />
-            <marker date="1528296123556" expanded="true" signature="1870:2247" ph="..." />
+            <marker date="1528432361751" expanded="true" signature="1867:1872" ph="..." />
+            <marker date="1528432361751" expanded="true" signature="1867:2244" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4b39931-e046-44b4-a62c-89520677cb1b/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="225">
+            <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
     </entry>

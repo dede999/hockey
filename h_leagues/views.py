@@ -9,17 +9,16 @@ def get_all():
     return League.objects.all()
 
 def matches(league):
-    not_played = Match.objects.filter(league=league, resultado='').order_by('pk')
+    not_played = Match.objects.filter(league=league, result='').order_by('pk')[:12]
     played = []
-    for m in Match.objects.filter(league=league, resultado='f'):
+    for m in Match.objects.filter(league=league, result='f'):
         played.append(m)
-    for m in Match.objects.filter(league=league, resultado='ot'):
+    for m in Match.objects.filter(league=league, result='ot'):
         played.append(m)
-    for m in Match.objects.filter(league=league, resultado='so'):
+    for m in Match.objects.filter(league=league, result='so'):
         played.append(m)
     played.sort()
-    return played, not_played
-
+    return played[:12], not_played
 
 # Create your views here.
 def index(request):
@@ -87,22 +86,25 @@ def playoffs(request, liga):
 
 def schedule(request, liga):
     played, not_played = matches(liga)
+    l = League.objects.get(name=liga)
     # po = [] # postseason
-    return render(request, 'h_leagues/schedule.html', {'P': played, 'nP': not_played})
+    return render(request, 'h_leagues/schedule.html',
+                  {'P': played, 'nP': not_played,
+                   'l': l, 'll': get_all()})
 
 def simulation(request, match_id):
     partida = Match.objects.get(pk=match_id)
-    home = Team.objects.filter(abr=partida.home)[0]
-    away = Team.objects.filter(abr=partida.away)[0]
+    home = RS_clubs.objects.get(id=partida.home_id)
+    away = RS_clubs.objects.get(id=partida.away_id)
     played, not_played = matches(partida.league)
-    if not partida.resultado:
+    if not partida.result:
         h = random.randint(0, 5)
         a = random.randint(0, 5)
         if h == a: # overtime
             if (random.uniform(0.00, 0.99) < 0.35):
-                partida.resultado = 'so'
+                partida.result = 'so'
             else:
-                partida.resultado = 'ot'
+                partida.result = 'ot'
             if (random.uniform(0.00, 0.99) < 0.60):
                 h += 1
                 home.seq("W")
@@ -111,7 +113,7 @@ def simulation(request, match_id):
                 home.wins += 1
                 home.pts += 2
                 away.pts += 1
-                if partida.resultado == 'so':
+                if partida.result == 'so':
                     away.sol += 1
                     away.seq("SOL")
                 else:
@@ -125,14 +127,14 @@ def simulation(request, match_id):
                 away.wins += 1
                 away.pts += 2
                 home.pts += 1
-                if partida.resultado == 'so':
+                if partida.result == 'so':
                     home.sol += 1
                     home.seq("SOL")
                 else:
                     home.otl += 1
                     home.seq("OTL")
         else:
-            partida.resultado = 'f'
+            partida.result = 'f'
             if h > a:
                 partida.winner = partida.home
                 win = home

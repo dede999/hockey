@@ -14,13 +14,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="501" />
+          <entry key="Django Console" value="575" />
+          <entry key="html" value="77" />
+          <entry key="md" value="923" />
+          <entry key="py" value="1167" />
+          <entry key="txt" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="324" />
-          <entry key="PLAIN_TEXT" value="177" />
+          <entry key="HTML" value="77" />
+          <entry key="Markdown" value="746" />
+          <entry key="PLAIN_TEXT" value="223" />
+          <entry key="Python" value="1742" />
         </counts>
       </usages-collector>
     </session>

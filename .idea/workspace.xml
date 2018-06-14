@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86c3ad2a-562e-4700-bc86-f8eab42c51a5" name="Default" comment="">
+    <list default="true" id="86c3ad2a-562e-4700-bc86-f8eab42c51a5" name="Default" comment="Refactoring DB - Solving millions of bugs on match simulation">
+      <change beforePath="$PROJECT_DIR$/.idea/usage.statistics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/usage.statistics.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h_leagues/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html" afterDir="false" />
@@ -65,8 +65,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/h_leagues/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="735">
-                  <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+                <state relative-caret-position="376">
+                  <caret line="223" column="38" selection-start-line="223" selection-start-column="38" selection-end-line="223" selection-end-column="38" />
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
                     <element signature="e#49#94#1" />
@@ -77,27 +77,13 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/README.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="225">
-                    <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-                  </first_editor>
-                  <second_editor />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+                <state relative-caret-position="191">
+                  <caret line="32" column="233" selection-start-line="32" selection-start-column="233" selection-end-line="32" selection-end-column="233" />
                   <folding>
-                    <element signature="e#873#892#0#HTML" expanded="true" />
-                    <element signature="e#1054#1078#0#HTML" expanded="true" />
-                    <element signature="e#1865#1891#0#HTML" expanded="true" />
-                    <element signature="e#2181#2207#0#HTML" expanded="true" />
+                    <element signature="e#506#533#0#HTML" expanded="true" />
+                    <element signature="e#1667#1694#0#HTML" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -128,13 +114,17 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/h_leagues/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+                <state relative-caret-position="161">
+                  <caret line="197" column="25" lean-forward="true" selection-start-line="197" selection-start-column="25" selection-end-line="197" selection-end-column="25" />
                   <folding>
                     <element signature="e#0#21#0" expanded="true" />
-                    <element signature="e#178#205#0" />
-                    <marker date="1528432361751" expanded="true" signature="1867:1872" ph="..." />
-                    <marker date="1528432361751" expanded="true" signature="1867:2244" ph="..." />
+                    <element signature="e#5541#5627#0" />
+                    <element signature="e#5937#6175#0" />
+                    <element signature="e#6528#6570#0" />
+                    <element signature="e#6605#6647#0" />
+                    <marker date="1528955441220" expanded="true" signature="649:650" ph="..." />
+                    <marker date="1528955441220" expanded="true" signature="1872:1877" ph="..." />
+                    <marker date="1528955441220" expanded="true" signature="1872:2249" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -197,10 +187,10 @@
         <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/base.js" />
         <option value="$PROJECT_DIR$/h_leagues/fixtures/match.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f4b39931-e046-44b4-a62c-89520677cb1b/console_2.sql" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/h_leagues/models.py" />
         <option value="$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html" />
         <option value="$PROJECT_DIR$/h_leagues/views.py" />
-        <option value="$PROJECT_DIR$/h_leagues/models.py" />
-        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -281,7 +271,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.views">
+  <component name="RunManager" selected="Django server.hockey">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="hockey" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -444,8 +434,8 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3279743" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.3279743" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49926794" weight="0.31993568" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32636657" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49926794" visible="true" weight="0.31993568" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50073206" side_tool="true" weight="0.32866043" />
       <window_info anchor="bottom" id="Database Changes" order="13" weight="0.329582" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -592,31 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/h_leagues/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#49#94#1" />
-            <element signature="e#111#262#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding>
-            <element signature="e#873#892#0#HTML" expanded="true" />
-            <element signature="e#1054#1078#0#HTML" expanded="true" />
-            <element signature="e#1865#1891#0#HTML" expanded="true" />
-            <element signature="e#2181#2207#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4b39931-e046-44b4-a62c-89520677cb1b/console_2.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -631,31 +596,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/h_leagues/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#178#205#0" />
-            <marker date="1528432361751" expanded="true" signature="1867:1872" ph="..." />
-            <marker date="1528432361751" expanded="true" signature="1867:2244" ph="..." />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="225">
-            <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <first_editor relative-caret-position="75">
+            <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h_leagues/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="223" column="38" selection-start-line="223" selection-start-column="38" selection-end-line="223" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#49#94#1" />
+            <element signature="e#111#262#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h_leagues/templates/h_leagues/schedule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="32" column="233" selection-start-line="32" selection-start-column="233" selection-end-line="32" selection-end-column="233" />
+          <folding>
+            <element signature="e#506#533#0#HTML" expanded="true" />
+            <element signature="e#1667#1694#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h_leagues/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="197" column="25" lean-forward="true" selection-start-line="197" selection-start-column="25" selection-end-line="197" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#5541#5627#0" />
+            <element signature="e#5937#6175#0" />
+            <element signature="e#6528#6570#0" />
+            <element signature="e#6605#6647#0" />
+            <marker date="1528955441220" expanded="true" signature="649:650" ph="..." />
+            <marker date="1528955441220" expanded="true" signature="1872:1877" ph="..." />
+            <marker date="1528955441220" expanded="true" signature="1872:2249" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

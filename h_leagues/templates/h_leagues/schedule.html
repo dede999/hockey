@@ -16,29 +16,23 @@
                     style="font-weight: bolder">
                     <li class="collection-header black white-text"> Match {{ matches.id }}
                     <a href="{% url 'leagues:simulation' matches.id %}" class="secondary-content {{ l.color }}-text"> Play <i class="material-icons">send</i></a></li>
-                    <li class="collection-item white-text {{ matches.away.t_abr.bg_color }} darken-4"> {{ matches.away.t_abr }} <span style="font-size: small">0-0-0-0</span> <span class="secondary-content {{ matches.away.t_abr.bg_color }} darken-4 white-text"> {{ matches.a_score }} </span>
-                    <li class="collection-item white-text {{ matches.home.t_abr.bg_color }} darken-4"> {{ matches.home.t_abr }} <span style="font-size: small">0-0-0-0</span> <span class="secondary-content {{ matches.home.t_abr.bg_color }} darken-4 white-text"> {{ matches.a_score }} </span>
+                    <li class="collection-item white-text {{ matches.away.t_abr.bg_color }} darken-4"> {{ matches.away.t_abr }} <span class="secondary-content {{ matches.away.t_abr.bg_color }} darken-4 white-text"> {{ matches.away.campaign }} </span>
+                    <li class="collection-item white-text {{ matches.home.t_abr.bg_color }} darken-4"> {{ matches.home.t_abr }} <span class="secondary-content {{ matches.home.t_abr.bg_color }} darken-4 white-text"> {{ matches.home.campaign }}  </span>
                 </ul>
-
             </div>
         {% endfor %}
 
         <br><br> <h3>Played</h3>
         {% for matches in P %}
-            <table>
-                <tr class="{{ l.bg_color }} {{ l.color }}-text">
-                    <td> @ {{ matches.home.t_abr.city }} </td>
-                    <td> {{ matches.get_result_display }} </td>
-                </tr>
-                <tr>
-                    <td class="{{ matches.away.t_abr.bg_color }} darken-2"> {{ matches.home.t_abr }} <span style="font-size: x-small"> {{ matches.a_rec }} </span> </td>
-                    <td class="{{ matches.away.t_abr.bg_color }} darken-4"> {{ matches.a_score }} </td>
-                </tr>
-                <tr>
-                    <td class="{{ matches.home.t_abr.bg_color }} darken-2"> {{ matches.home.t_abr }} <span style="font-size: x-small"> {{ matches.h_rec }} </span> </td>
-                    <td class="{{ matches.home.t_abr.bg_color }} darken-4"> {{ matches.h_score }} </td>
-                </tr>
-            </table>
+            <div class="col s6 m6 l6">
+                <ul class="collection with-header"
+                    style="font-weight: bolder">
+                    <li class="collection-header black white-text"> Match {{ matches.id }}
+                    <a href="{% url 'leagues:simulation' matches.id %}" class="secondary-content {{ l.color }}-text"> Play <i class="material-icons">send</i></a></li>
+                    <li class="collection-item white-text {{ matches.away.t_abr.bg_color }} darken-4"> {{ matches.away.t_abr }} <span class="secondary-content {{ matches.away.t_abr.bg_color }} darken-4 white-text"> {{ matches.a_score }} </span>
+                    <li class="collection-item white-text {{ matches.home.t_abr.bg_color }} darken-4"> {{ matches.home.t_abr }} <span class="secondary-content {{ matches.home.t_abr.bg_color }} darken-4 white-text"> {{ matches.h_score }}  </span>
+                </ul>
+            </div>
         {% endfor %}
     </div>
 {% endblock %}

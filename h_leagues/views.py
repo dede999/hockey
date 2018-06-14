@@ -1,5 +1,5 @@
 from .models import *
-import random
+import numpy as np
 from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponseRedirect
@@ -94,79 +94,111 @@ def schedule(request, liga):
 
 def simulation(request, match_id):
     partida = Match.objects.get(pk=match_id)
+    l = League.objects.get(name=partida.league)
     home = RS_clubs.objects.get(id=partida.home_id)
     away = RS_clubs.objects.get(id=partida.away_id)
     played, not_played = matches(partida.league)
-    if not partida.result:
-        h = random.randint(0, 5)
-        a = random.randint(0, 5)
-        if h == a: # overtime
-            if (random.uniform(0.00, 0.99) < 0.35):
-                partida.result = 'so'
+    regulation = False
+    for per in range(4):
+        for turn in range(3):
+            # home attack
+            attack = home
+            defense =  away
+            am = int((attack.off_power + 2*attack.momentum)/3) # attacking momentum
+            dm = int((defense.def_power + 2*defense.momentum)/3) # defending momentum
+            if np.random.randint(0,am+dm) <= am:
+                # goal
+                attack.momentum += 50
+                defense.momentum -= 50
+                partida.h_score += 1
+                attack.gf += 1
+                defense.ga += 1
+                if per == 3:
+                    break
             else:
-                partida.result = 'ot'
-            if (random.uniform(0.00, 0.99) < 0.60):
-                h += 1
-                home.seq("W")
-                partida.winner = partida.home
-                win = home
-                home.wins += 1
-                home.pts += 2
-                away.pts += 1
-                if partida.result == 'so':
-                    away.sol += 1
-                    away.seq("SOL")
-                else:
-                    away.otl += 1
-                    away.seq("OTL")
+                # no goal
+                attack.momentum -= 30
+                defense.momentum += 30
+            # visitors attack
+            attack = away
+            defense =  home
+            am = int((attack.off_power + 2*attack.momentum)/3) # attacking momentum
+            dm = int((defense.def_power + 2*defense.momentum)/3) # defending momentum
+            if np.random.randint(0,am+dm) <= am:
+                # goal
+                attack.momentum += 50
+                defense.momentum -= 50
+                partida.h_score += 1
+                attack.gf += 1
+                defense.ga += 1
+                if per == 3:
+                    break
             else:
-                a += 1
-                partida.winner = partida.away
-                win = away
-                away.seq("W")
-                away.wins += 1
-                away.pts += 2
-                home.pts += 1
-                if partida.result == 'so':
-                    home.sol += 1
-                    home.seq("SOL")
-                else:
-                    home.otl += 1
-                    home.seq("OTL")
-        else:
+                # no goal
+                attack.momentum -= 30
+                defense.momentum += 30
+        if per == 2 and partida.h_score != partida.a_score:
+            # match over in regulation
             partida.result = 'f'
-            if h > a:
-                partida.winner = partida.home
-                win = home
-                home.wins += 1
-                away.loss += 1
-                home.pts += 2
-                home.seq("W")
-                away.seq("L")
+            if partida.h_score > partida.a_score:
+                winner = home
+                loser = away
             else:
-                partida.winner = partida.away
-                win = away
-                away.wins += 1
-                home.loss += 1
-                away.pts += 2
-                away.seq("W")
-                home.seq("L")
-        partida.h_score = h
-        partida.a_score = a
-        home.gf += h
-        home.ga += a
-        away.gf += a
-        away.ga += h
-        home.diff = home.gf - home.ga
-        away.diff = away.gf - away.ga
-        home.save()
-        away.save()
-        partida.save()
-    message = '%s %d @ %s %d' % (away.name, partida.a_score, home.name, partida.h_score)
+                winner = away
+                loser = home
+            winner.wins += 1
+            winner.seq('W')
+            winner.l5('W')
+            winner.pts += 2
+            loser.loss += 1
+            loser.seq('L')
+            loser.l5('L')
+            regulation = True
+            break
+    if partida.h_score != partida.a_score:
+        if not regulation:
+            # overtime
+            partida.result = 'ot'
+            if partida.h_score > partida.a_score:
+                winner = home
+                loser = away
+            else:
+                winner = away
+                loser = home
+            winner.wins += 1
+            winner.seq('W')
+            winner.l5('W')
+            winner.pts += 2
+            loser.otl += 1
+            loser.pts += 1
+            loser.seq('OTL')
+            loser.l5('OTL')
+    else:
+        # PSO
+        partida.result = 'so'
+        hm = home.off_power + home.momentum
+        am = away.off_power + away.momentum
+        if np.random.randint(0, hm+am) < hm:
+            winner = home
+            loser = away
+        else:
+            winner = away
+            loser = home
+        winner.wins += 1
+        winner.gf += 1
+        winner.pts += 2
+        winner.seq('W')
+        winner.l5('W')
+        loser.sol += 1
+        loser.ga += 1
+        loser.seq('SOL')
+        loser.l5('SOL')
+    partida.save()
+    message = '%s %d @ %s %d' % (away.t_abr.name, partida.a_score, home.t_abr.name, partida.h_score)
     return render(request, 'h_leagues/schedule.html',
-                  {'P': played, 'nP': not_played, 'msg': message, 'result': partida.get_resultado_display()})
+                  {'P': played, 'nP': not_played, 'msg': message,
+                   'result': partida.get_result_display(), 'l': l, 'll': get_all()})
 
 # from h_leagues.models import *
 # m = Match.objects.first
 # h = Team.objects.filter(abr=m.home)[0]
-# git commit -m "Simulations now work, and so standings. Improvements on the templates"

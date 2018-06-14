@@ -208,6 +208,15 @@ class RS_clubs(models.Model): #6
         else:
             return '%05.3f' % (self.pts/(jogos*2))
 
+    def campaign(self):
+        return "%s - %s - %s - %s" % (self.wins, self.loss, self.otl, self.sol)
+
+    def l5(self, result):
+        vec = [result] + self.last5.split('-')[:4]
+        self.last5 = '%s - %s - %s - %s - %s' % (vec[0], vec[1], vec[2], vec[3], vec[4])
+        self.save()
+
+
 class PostSeason(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     season = models.ForeignKey(Season, on_delete=models.CASCADE)
